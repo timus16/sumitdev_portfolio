@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #FAFBFC; /* gray-50 */
+    --color-foreground: #212529; /* gray-900 */
+    --color-border: #E9ECEF; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #00D9FF; /* cyan-400 */
+    
+    /* Card & Surface Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #212529; /* gray-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #212529; /* gray-900 */
+    --color-surface: #F1F3F5; /* gray-100 */
+    
+    /* Muted Colors */
+    --color-muted: #F8F9FA; /* gray-50 */
+    --color-muted-foreground: #6C757D; /* gray-500 */
+    
+    /* Brand Primary Colors */
+    --color-primary: #0A1628; /* slate-900 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Brand Secondary Colors */
+    --color-secondary: #00D9FF; /* cyan-400 */
+    --color-secondary-foreground: #0A1628; /* slate-900 */
+    
+    /* Accent Colors */
+    --color-accent: #FFB800; /* amber-400 */
+    --color-accent-foreground: #0A1628; /* slate-900 */
+    
+    /* State Colors */
+    --color-destructive: #DC3545; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    --color-success: #28A745; /* green-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    --color-warning: #FD7E14; /* orange-500 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    --color-error: #DC3545; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Typography Colors */
+    --color-text-primary: #212529; /* gray-900 */
+    --color-text-secondary: #6C757D; /* gray-500 */
+    
+    /* Brand Specific Colors */
+    --color-digital-depth: #0A1628; /* slate-900 */
+    --color-electric-cyan: #00D9FF; /* cyan-400 */
+    --color-warm-gold: #FFB800; /* amber-400 */
+    --color-attention-orange: #FD7E14; /* orange-500 */
+    
+    /* Spacing Variables */
+    --spacing-xs: 0.5rem; /* 8px */
+    --spacing-sm: 0.8125rem; /* 13px */
+    --spacing-md: 1.3125rem; /* 21px */
+    --spacing-lg: 2.125rem; /* 34px */
+    --spacing-xl: 3.4375rem; /* 55px */
+    
+    /* Shadow Variables */
+    --shadow-subtle: 0 4px 6px rgba(10, 22, 40, 0.1), 0 1px 3px rgba(10, 22, 40, 0.08);
+    --shadow-floating: 0 4px 12px rgba(10, 22, 40, 0.1);
+    --shadow-dramatic: 0 8px 25px rgba(10, 22, 40, 0.15), 0 3px 10px rgba(10, 22, 40, 0.1);
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem; /* 4px */
+    --radius-md: 0.5rem; /* 8px */
+    --radius-lg: 0.75rem; /* 12px */
+    --radius-xl: 1rem; /* 16px */
+    
+    /* Animation Variables */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography Base Styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline font-semibold text-text-primary;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-4xl lg:text-5xl xl:text-6xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-4xl xl:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl lg:text-2xl;
+  }
+  
+  h5 {
+    @apply text-lg lg:text-xl;
+  }
+  
+  h6 {
+    @apply text-base lg:text-lg;
+  }
+  
+  p {
+    @apply text-text-primary leading-relaxed;
+  }
+  
+  .text-secondary {
+    @apply text-text-secondary;
+  }
+  
+  /* Code Styling */
+  code, pre {
+    @apply font-mono;
+  }
+  
+  /* CTA Styling */
+  .cta-text {
+    @apply font-cta font-medium;
+  }
+  
+  /* Custom Utilities */
+  .glass-morphism {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+  }
+  
+  .text-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-accent {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-warning));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-floating {
+    box-shadow: var(--shadow-floating);
+  }
+  
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+  
+  .shadow-dramatic {
+    box-shadow: var(--shadow-dramatic);
+  }
+  
+  /* Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px var(--color-secondary), 0 0 10px var(--color-secondary), 0 0 15px var(--color-secondary);
+    }
+    to {
+      box-shadow: 0 0 10px var(--color-secondary), 0 0 20px var(--color-secondary), 0 0 30px var(--color-secondary);
+    }
+  }
+  
+  /* Scroll Behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Focus Styles */
+  *:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+  
+  /* Selection Styles */
+  ::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-foreground);
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color-muted);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-text-secondary);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+}
