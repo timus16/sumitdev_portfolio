@@ -1,21 +1,23 @@
 import React from 'react';
 
+import React from 'react';
+import { Helmet } from 'react-helmet';
+
 export default function FlutterVsNativePerformance() {
   return (
-    <article className="prose mx-auto py-12">
-      <h1>Blog: Flutter vs Native—Performance & UI (2025)</h1>
-      <p className="text-sm text-gray-500 mb-4">Published March 2025</p>
-      <p>
-        In this 2025 analysis, we compare Flutter and native development for a logistics app. Flutter delivered a consistent UI and rapid iteration, while native offered slightly better device integration.
-      </p>
-      <ul>
-        <li>Flutter build time: 2x faster</li>
-        <li>UI consistency score: 98%</li>
-        <li>Native integration: 100% device API access</li>
-      </ul>
-      <p>
-        <strong>Conclusion:</strong> For most startups, Flutter offers a great balance of speed, cost, and user experience.
-      </p>
-    </article>
+    <>
+      <Helmet>
+        <title>Flutter vs Native: Performance Deep Dive | SumitDev Blog</title>
+        <meta name="description" content="A technical comparison of Flutter and native mobile app performance, with real-world benchmarks and optimization tips for 2025." />
+      </Helmet>
+      <article className="prose mx-auto py-12">
+        <h1>Flutter vs Native: Performance Deep Dive</h1>
+        <p className="text-sm text-gray-500 mb-4">Published 2025</p>
+        <p>
+          A technical comparison of Flutter and native mobile app performance, with real-world benchmarks and optimization tips.
+        </p>
+        {/* ...more content... */}
+      </article>
+    </>
   );
 }
