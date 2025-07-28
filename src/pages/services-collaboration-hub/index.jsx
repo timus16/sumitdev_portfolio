@@ -420,7 +420,9 @@ const ServicesCollaborationHub = () => {
               <h4 className="font-semibold mb-4 font-headline">Follow</h4>
               <div className="flex space-x-4">
                 <Icon name="Twitter" size={20} className="text-primary-foreground/80 hover:text-secondary cursor-pointer" />
-                <Icon name="Linkedin" size={20} className="text-primary-foreground/80 hover:text-secondary cursor-pointer" />
+                <a href="https://www.linkedin.com/in/sumitkumar-gupta-react/" target="_blank" rel="noopener noreferrer">
+                  <Icon name="Linkedin" size={20} className="text-primary-foreground/80 hover:text-secondary cursor-pointer" />
+                </a>
                 <Icon name="Github" size={20} className="text-primary-foreground/80 hover:text-secondary cursor-pointer" />
               </div>
             </div>

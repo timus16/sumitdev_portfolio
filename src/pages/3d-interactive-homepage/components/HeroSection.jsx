@@ -1,4 +1,30 @@
 import React, { useState, useEffect, useRef } from 'react';
+// Simple typewriter effect for hero headline
+const useTypewriter = (words, speed = 80, pause = 1200) => {
+  const [displayed, setDisplayed] = useState(words[0]);
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    let timeout;
+    let word = words[index];
+    let i = 0;
+    const type = () => {
+      setDisplayed(word.slice(0, i));
+      if (i <= word.length) {
+        timeout = setTimeout(() => {
+          i++;
+          type();
+        }, speed);
+      } else {
+        timeout = setTimeout(() => {
+          setIndex((prev) => (prev + 1) % words.length);
+        }, pause);
+      }
+    };
+    type();
+    return () => clearTimeout(timeout);
+  }, [index, words, speed, pause]);
+  return displayed;
+};
 import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
@@ -42,14 +68,34 @@ const HeroSection = () => {
     { label: 'Websites Optimized', value: '150+', icon: 'Globe' },
     { label: 'Avg Traffic Increase', value: '300%', icon: 'TrendingUp' },
     { label: 'Client Satisfaction', value: '98%', icon: 'Star' },
-    { label: 'Years Experience', value: '5+', icon: 'Clock' }
+    { label: 'Experience', value: '5 Years', icon: 'Clock' }
   ];
+
+  // Typewriter for interactive headline
+  const typewriterText = useTypewriter([
+    'SEO-Driven Development',
+    'React Native & Flutter Apps',
+    'Shopify & WordPress Solutions',
+    'Performance. UX. Results.'
+  ]);
+
+  // Mouse-following highlight
+  const highlightStyle = {
+    left: `${mousePosition.x * 100}%`,
+    top: `${mousePosition.y * 100}%`,
+    opacity: 0.15,
+    transform: 'translate(-50%, -50%)',
+    pointerEvents: 'none',
+  };
 
   return (
     <section 
       ref={heroRef}
       className="relative min-h-screen bg-gradient-to-br from-background via-surface to-muted overflow-hidden flex items-center"
     >
+      {/* Mouse-following highlight */}
+      <div className="absolute z-10 w-80 h-80 bg-accent rounded-full blur-3xl transition-all duration-300" style={highlightStyle}></div>
+
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10"></div>
@@ -135,35 +181,31 @@ const HeroSection = () => {
               <span className="text-sm font-medium text-accent">Available for Projects</span>
             </motion.div>
 
-            {/* Main Heading */}
+            {/* Interactive Main Heading */}
             <motion.h1
-              className="text-4xl lg:text-6xl xl:text-7xl font-bold font-headline mb-6"
+              className="text-4xl lg:text-6xl xl:text-7xl font-bold font-headline mb-6 min-h-[4.5rem]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <span className="text-primary">SEO-Driven</span>
-              <br />
-              <span className="text-gradient-primary">Development</span>
-              <br />
-              <span className="text-text-secondary text-2xl lg:text-3xl xl:text-4xl font-normal">
-                That Delivers Measurable Results
-              </span>
+              <span className="text-gradient-primary block">{typewriterText}<span className="animate-pulse">|</span></span>
             </motion.h1>
 
-            {/* Description */}
+            {/* Animated Description */}
             <motion.p
               className="text-lg lg:text-xl text-text-secondary mb-8 max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              Mumbai-based web developer specializing in WordPress optimization, 
-              technical SEO, and performance enhancement. Transforming websites 
-              into search engine magnets and user experience champions.
+              <span className="inline-block animate-fade-in-up">
+                <b>Build, optimize, and scale</b> your digital presence with cutting-edge web and mobile solutions.<br/>
+                <span className="text-accent font-semibold">React Native</span>, <span className="text-primary font-semibold">Flutter</span>, <span className="text-secondary font-semibold">Shopify</span>, <span className="text-primary font-semibold">WordPress</span> &amp; more.<br/>
+                <span className="text-success font-semibold">Performance. UX. Results.</span>
+              </span>
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* Animated CTA Buttons */}
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12"
               initial={{ opacity: 0, y: 20 }}
@@ -175,7 +217,11 @@ const HeroSection = () => {
                 size="lg"
                 iconName="ArrowRight"
                 iconPosition="right"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta shadow-floating hover:shadow-dramatic transition-all duration-normal"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta shadow-floating hover:shadow-dramatic transition-all duration-normal animate-bounce"
+                onClick={() => {
+                  const form = document.querySelector('#footer-contact-form');
+                  if (form) form.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Start Your Project
               </Button>
@@ -184,7 +230,10 @@ const HeroSection = () => {
                 size="lg"
                 iconName="BarChart3"
                 iconPosition="left"
-                className="font-cta border-secondary text-secondary hover:bg-secondary/10"
+                className="font-cta border-secondary text-secondary hover:bg-secondary/10 animate-pulse"
+                onClick={() => {
+                  window.location.href = 'mailto:sumitg7@zohomail.in?subject=Free SEO Audit Request';
+                }}
               >
                 Free SEO Audit
               </Button>
@@ -243,46 +292,28 @@ const HeroSection = () => {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5"></div>
                 
-                {/* Profile Image */}
-                <div className="relative z-10 text-center mb-6">
-                  <div className="relative inline-block">
-                    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-secondary/30 shadow-floating">
-                      <Image
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
-                        alt="Sumit Gupta - Web Developer"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center shadow-floating">
-                      <Icon name="Code" size={16} className="text-accent-foreground" />
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-primary mt-4 mb-2">
-                    Sumit Gupta
-                  </h3>
-                  <p className="text-text-secondary font-medium">
-                    Full-Stack Developer & SEO Specialist
-                  </p>
-                  <div className="flex items-center justify-center mt-2">
-                    <Icon name="MapPin" size={14} className="text-secondary mr-1" />
-                    <span className="text-sm text-text-secondary">Mumbai, India</span>
-                  </div>
-                </div>
+                {/* Profile Image removed as requested */}
 
-                {/* Tech Stack Icons */}
-                <div className="relative z-10 flex justify-center space-x-4">
-                  {['Globe', 'Code2', 'Database', 'Zap'].map((icon, index) => (
-                    <motion.div
-                      key={icon}
-                      className="w-10 h-10 bg-surface rounded-lg flex items-center justify-center shadow-subtle"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                    >
-                      <Icon name={icon} size={18} className="text-primary" />
-                    </motion.div>
-                  ))}
-                </div>
+            {/* Experience Highlight */}
+            <div className="relative z-10 flex flex-col items-center justify-center mb-4">
+              <div className="flex items-center bg-accent/20 px-4 py-2 rounded-full shadow-floating mb-2">
+                <Icon name="Clock" size={20} className="text-accent mr-2" />
+                <span className="text-lg font-bold text-accent">5 Years Experience</span>
+              </div>
+            </div>
+            {/* Tech Stack Icons */}
+            <div className="relative z-10 flex justify-center space-x-4">
+              {['Globe', 'Code2', 'Database', 'Zap'].map((icon, index) => (
+                <motion.div
+                  key={icon}
+                  className="w-10 h-10 bg-surface rounded-lg flex items-center justify-center shadow-subtle"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <Icon name={icon} size={18} className="text-primary" />
+                </motion.div>
+              ))}
+            </div>
               </motion.div>
 
               {/* Floating Elements Around Card */}
@@ -306,22 +337,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-      >
-        <motion.div
-          className="flex flex-col items-center text-text-secondary"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <span className="text-sm font-medium mb-2">Scroll to explore</span>
-          <Icon name="ChevronDown" size={20} />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

@@ -51,6 +51,51 @@ const ServicesCards = () => {
       ],
       projects: '60+ Optimizations',
       rating: '4.9/5'
+    },
+    {
+      id: 4,
+      title: 'React Native Development',
+      description: 'Cross-platform mobile apps with native performance and seamless UX using React Native.',
+      icon: 'Smartphone',
+      color: 'from-indigo-500 to-blue-400',
+      outcomes: [
+        'Single codebase for iOS & Android',
+        'Native-like performance',
+        'Fast development & deployment',
+        'Integration with device APIs'
+      ],
+      projects: '20+ Apps',
+      rating: '4.8/5'
+    },
+    {
+      id: 5,
+      title: 'Flutter Development',
+      description: 'Beautiful, high-performance mobile apps for iOS and Android built with Flutter.',
+      icon: 'Layers',
+      color: 'from-cyan-500 to-teal-400',
+      outcomes: [
+        'Stunning UI with Material & Cupertino widgets',
+        'Hot reload for rapid iteration',
+        'Consistent experience across devices',
+        'Rich animations and custom designs'
+      ],
+      projects: '15+ Apps',
+      rating: '4.7/5'
+    },
+    {
+      id: 6,
+      title: 'Shopify Development',
+      description: 'Custom Shopify stores designed for conversion, speed, and seamless e-commerce experiences.',
+      icon: 'ShoppingCart',
+      color: 'from-green-400 to-blue-500',
+      outcomes: [
+        'High-converting custom storefronts',
+        'Optimized checkout flows',
+        'App integrations & automation',
+        'SEO & performance enhancements'
+      ],
+      projects: '30+ Stores',
+      rating: '4.8/5'
     }
   ];
 
@@ -88,7 +133,7 @@ const ServicesCards = () => {
           </h2>
           
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Three core service areas where technical expertise meets measurable business results
+            Six core service areas where technical expertise meets measurable business results, including e-commerce and mobile app development for iOS and Android.
           </p>
         </motion.div>
 
@@ -195,8 +240,9 @@ const ServicesCards = () => {
                     ))}
                   </motion.div>
 
-                  {/* CTA Button */}
+                  {/* CTA Button & Case Study/Blog Link */}
                   <motion.div
+                    className="flex flex-col gap-2"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -206,9 +252,45 @@ const ServicesCards = () => {
                       iconName="ArrowRight"
                       iconPosition="right"
                       className="w-full border-secondary text-secondary hover:bg-secondary/10 font-cta"
+                      onClick={() => {
+                        // Example: Scroll to contact or open modal
+                        const form = document.querySelector('#footer-contact-form');
+                        if (form) form.scrollIntoView({ behavior: 'smooth' });
+                      }}
                     >
                       Learn More
                     </Button>
+                    {/* Case Study/Blog Link */}
+                    {service.title === 'WordPress Development' && (
+                      <a href="/blog/wordpress-seo-case-study" className="text-xs text-accent hover:underline text-left" target="_blank" rel="noopener noreferrer">
+                        Case Study: 300% Traffic Growth with WordPress SEO
+                      </a>
+                    )}
+                    {service.title === 'Technical SEO' && (
+                      <a href="/blog/technical-seo-audit-success" className="text-xs text-accent hover:underline text-left" target="_blank" rel="noopener noreferrer">
+                        Blog: How Technical SEO Audits Drive Results
+                      </a>
+                    )}
+                    {service.title === 'Performance Optimization' && (
+                      <a href="/blog/performance-optimization-guide" className="text-xs text-accent hover:underline text-left" target="_blank" rel="noopener noreferrer">
+                        Blog: Speed Optimization for Higher Conversions
+                      </a>
+                    )}
+                    {service.title === 'React Native Development' && (
+                      <a href="/blog/react-native-app-case-study" className="text-xs text-accent hover:underline text-left" target="_blank" rel="noopener noreferrer">
+                        Case Study: Launching a Cross-Platform App with React Native
+                      </a>
+                    )}
+                    {service.title === 'Flutter Development' && (
+                      <a href="/blog/flutter-vs-native-performance" className="text-xs text-accent hover:underline text-left" target="_blank" rel="noopener noreferrer">
+                        Blog: Flutter vs Native—Performance & UI
+                      </a>
+                    )}
+                    {service.title === 'Shopify Development' && (
+                      <a href="/blog/shopify-conversion-boost" className="text-xs text-accent hover:underline text-left" target="_blank" rel="noopener noreferrer">
+                        Case Study: Boosting Sales with Shopify Customization
+                      </a>
+                    )}
                   </motion.div>
                 </div>
 

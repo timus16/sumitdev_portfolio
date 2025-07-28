@@ -123,6 +123,9 @@ const Header = () => {
               variant="outline" 
               size="sm"
               className="font-cta"
+              onClick={() => {
+                window.location.href = 'mailto:sumitg7@zohomail.in?subject=Free SEO Audit Request';
+              }}
             >
               Free SEO Audit
             </Button>
@@ -132,6 +135,10 @@ const Header = () => {
               iconName="ArrowRight"
               iconPosition="right"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta"
+              onClick={() => {
+                const form = document.querySelector('#footer-contact-form');
+                if (form) form.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Start Project
             </Button>

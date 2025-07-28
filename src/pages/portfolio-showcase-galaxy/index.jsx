@@ -107,7 +107,7 @@ const restaurantSchema = {
     "addressRegion": "Mumbai",
     "postalCode": "400050"
   },
-  "telephone": "+91-22-12345678",
+  "telephone": "+91-9137021658",
   "servesCuisine": "Indian",
   "priceRange": "₹₹"
 };`
@@ -792,7 +792,7 @@ function generateBusinessSchema($business) {
                 { label: "Projects Completed", value: "25+", icon: "CheckCircle" },
                 { label: "Average Traffic Increase", value: "350%", icon: "TrendingUp" },
                 { label: "Client Satisfaction", value: "4.9/5", icon: "Star" },
-                { label: "Years Experience", value: "5+", icon: "Calendar" }
+                { label: "Experience", value: "5 Years", icon: "Calendar" }
               ].map((stat, index) => (
                 <motion.div
                   key={index}

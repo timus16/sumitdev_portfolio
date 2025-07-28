@@ -57,7 +57,7 @@ const SkillsExpertiseHub = () => {
   ];
 
   const skillMetrics = [
-    { label: 'Years of Experience', value: '5+', icon: 'Calendar' },
+    { label: 'Experience', value: '5 Years', icon: 'Calendar' },
     { label: 'Projects Completed', value: '150+', icon: 'Briefcase' },
     { label: 'Technologies Mastered', value: '25+', icon: 'Code2' },
     { label: 'Client Satisfaction', value: '98%', icon: 'Heart' }
