@@ -31,7 +31,7 @@ const Header = () => {
   }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((open) => !open);
   };
 
   const closeMenu = () => {
@@ -43,15 +43,24 @@ const Header = () => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-fixed transition-all duration-normal ${
-        isScrolled 
-          ? 'bg-background/95 backdrop-blur-brand shadow-subtle border-b border-border' 
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="w-full">
-        <div className="flex items-center justify-between h-16 px-4 lg:px-6">
+    <>
+      {/* Backdrop overlay for mobile menu */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 z-[49] bg-black/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden"
+          aria-hidden="true"
+          onClick={closeMenu}
+        />
+      )}
+      <header
+        className={`fixed top-0 left-0 right-0 z-fixed transition-all duration-normal ${
+          isScrolled
+            ? 'bg-background/95 backdrop-blur-brand shadow-subtle border-b border-border'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="w-full">
+          <div className="flex items-center justify-between h-16 px-4 lg:px-6">
           {/* Logo */}
           <Link 
             to="/3d-interactive-homepage" 
@@ -150,21 +159,26 @@ const Header = () => {
             onClick={toggleMenu}
             className="lg:hidden p-2 rounded-lg text-text-primary hover:bg-surface transition-all duration-normal"
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <Icon 
-              name={isMenuOpen ? "X" : "Menu"} 
-              size={24} 
+            <Icon
+              name={isMenuOpen ? "X" : "Menu"}
+              size={24}
               className="transition-transform duration-normal"
             />
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div 
-          className={`lg:hidden transition-all duration-normal overflow-hidden ${
-            isMenuOpen 
-              ? 'max-h-screen opacity-100 border-t border-border bg-background/95 backdrop-blur-brand' :'max-h-0 opacity-0'
+        <div
+          id="mobile-menu"
+          className={`lg:hidden fixed top-16 left-0 right-0 z-[50] transition-all duration-300 overflow-hidden ${
+            isMenuOpen
+              ? 'max-h-[80vh] opacity-100 border-t border-border bg-background/95 backdrop-blur-brand translate-y-0'
+              : 'max-h-0 opacity-0 -translate-y-4 pointer-events-none'
           }`}
+          style={{ willChange: 'opacity, transform' }}
         >
           <nav className="px-4 py-4 space-y-2">
             {[...navigationItems, ...moreItems].map((item) => (
@@ -182,19 +196,18 @@ const Header = () => {
                 <span>{item.name}</span>
               </Link>
             ))}
-            
             {/* Mobile CTAs */}
             <div className="pt-4 space-y-3 border-t border-border">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 fullWidth
                 className="font-cta"
                 onClick={closeMenu}
               >
                 Free SEO Audit
               </Button>
-              <Button 
-                variant="default" 
+              <Button
+                variant="default"
                 fullWidth
                 iconName="ArrowRight"
                 iconPosition="right"
@@ -206,8 +219,8 @@ const Header = () => {
             </div>
           </nav>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 
