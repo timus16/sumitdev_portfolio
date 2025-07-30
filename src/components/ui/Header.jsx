@@ -424,9 +424,8 @@ const Header = () => {
           </nav>
         </div>
         {/* Close the w-full wrapper div here */}
-      </div>
-    </header>
-  </>
+      </header>
+    </>
   );
 };
 
