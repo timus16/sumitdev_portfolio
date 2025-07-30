@@ -223,78 +223,10 @@ const Header = () => {
               <Icon
                 name={isMenuOpen ? "X" : "Menu"}
                 size={24}
-                Start Project
+                className="transition-transform duration-normal"
               />
             </button>
           </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            {navigationItems.map((item) => (
-              item.dropdown ? (
-                <div key={item.name} className="relative group">
-                  <button className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary transition-all duration-normal">
-                    <Icon name={item.icon} size={18} />
-                    <span>{item.name}</span>
-                    <Icon name="ChevronDown" size={16} className="group-hover:rotate-180 transition-transform duration-normal" />
-                  </button>
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-lg shadow-floating opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-normal z-dropdown">
-                    {item.dropdown.map((sub) => (
-                      <Link
-                        key={sub.path}
-                        to={sub.path}
-                        className={`flex items-center space-x-3 px-4 py-3 text-sm font-body transition-all duration-normal first:rounded-t-lg last:rounded-b-lg ${
-                          isActivePath(sub.path)
-                            ? 'bg-primary text-primary-foreground'
-                            : 'text-text-primary hover:bg-surface'
-                        }`}
-                      >
-                        <Icon name={sub.icon} size={16} />
-                        <span>{sub.name}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body transition-all duration-normal ${
-                    isActivePath(item.path)
-                      ? 'bg-primary text-primary-foreground shadow-subtle'
-                      : 'text-text-primary hover:bg-surface hover:text-primary'
-                  }`}
-                >
-                  <Icon name={item.icon} size={18} />
-                  <span>{item.name}</span>
-                </Link>
-              )
-            ))}
-            {/* More Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary transition-all duration-normal">
-                <Icon name="MoreHorizontal" size={18} />
-                <span>More</span>
-                <Icon name="ChevronDown" size={16} className="group-hover:rotate-180 transition-transform duration-normal" />
-              </button>
-              <div className="absolute top-full right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-floating opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-normal z-dropdown">
-                {moreItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className={`flex items-center space-x-3 px-4 py-3 text-sm font-body transition-all duration-normal first:rounded-t-lg last:rounded-b-lg ${
-                      isActivePath(item.path)
-                        ? 'bg-primary text-primary-foreground'
-                        : 'text-text-primary hover:bg-surface'
-                    }`}
-                  >
-                    <Icon name={item.icon} size={16} />
-                    <span>{item.name}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </nav>
 
           {/* CTA Button & Social Icon */}
           <div className="hidden md:flex items-center space-x-4">
