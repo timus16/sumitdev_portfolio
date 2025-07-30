@@ -23,6 +23,21 @@ const Header = () => {
         { name: 'Data Dashboard 3D', path: '/portfolio-3d/project-3', icon: 'BarChart2' },
       ]
     },
+    {
+      name: 'Web Tools',
+      icon: 'Tool',
+      dropdown: [
+        { name: 'All Tools', path: '/web-tools', icon: 'Grid' },
+        { name: 'Code Playground', path: '/web-tools/code-playground', icon: 'Code2' },
+        { name: 'Color Picker', path: '/web-tools/color-picker', icon: 'Droplet' },
+        { name: 'Box-Shadow Generator', path: '/web-tools/box-shadow-generator', icon: 'Layers' },
+        { name: 'JSON Formatter', path: '/web-tools/json-formatter', icon: 'FileText' },
+        { name: 'Regex Tester', path: '/web-tools/regex-tester', icon: 'Search' },
+        { name: 'Image Compressor', path: '/web-tools/image-compressor', icon: 'Image' },
+        { name: 'Responsive Tester', path: '/web-tools/responsive-tester', icon: 'MonitorSmartphone' },
+        { name: 'QR Code Generator', path: '/web-tools/qr-code-generator', icon: 'QrCode' }
+      ]
+    },
     { name: 'Blog', path: '/blog', icon: 'BookOpen' },
     { name: 'Results', path: '/seo-results-dashboard', icon: 'TrendingUp' }
   ];
