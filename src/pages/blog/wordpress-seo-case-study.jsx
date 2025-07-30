@@ -7,9 +7,47 @@ export default function WordPressSEOCaseStudy() {
       <Helmet>
         <title>Case Study: 300% Traffic Growth with WordPress SEO (2025) | SumitDev Blog</title>
         <meta name="description" content="How a Mumbai e-commerce client achieved 300% organic growth with technical SEO, schema, Core Web Vitals, and modern SEO strategies. Actionable takeaways for 2025." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" />
+        <meta name="keywords" content="WordPress, SEO, Technical SEO, Core Web Vitals, Schema, Case Study, 2025, Google ranking, organic traffic, Mumbai, e-commerce" />
+        <meta name="author" content="Sumit Dev" />
+        <meta property="og:title" content="Case Study: 300% Traffic Growth with WordPress SEO (2025) | SumitDev Blog" />
+        <meta property="og:description" content="How a Mumbai e-commerce client achieved 300% organic growth with technical SEO, schema, Core Web Vitals, and modern SEO strategies. Actionable takeaways for 2025." />
         <meta property="og:type" content="article" />
-        <meta property="article:tag" content="WordPress, SEO, Technical SEO, Core Web Vitals, Schema, Case Study, 2025" />
+        <meta property="og:url" content="https://sumitdev.com/blog/wordpress-seo-case-study" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" />
+        <meta property="og:site_name" content="SumitDev Blog" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Case Study: 300% Traffic Growth with WordPress SEO (2025) | SumitDev Blog" />
+        <meta name="twitter:description" content="How a Mumbai e-commerce client achieved 300% organic growth with technical SEO, schema, Core Web Vitals, and modern SEO strategies. Actionable takeaways for 2025." />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" />
+        <link rel="canonical" href="https://sumitdev.com/blog/wordpress-seo-case-study" />
+        {/* Structured Data for SEO (JSON-LD) */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Case Study: 300% Traffic Growth with WordPress SEO (2025) | SumitDev Blog",
+            "description": "How a Mumbai e-commerce client achieved 300% organic growth with technical SEO, schema, Core Web Vitals, and modern SEO strategies. Actionable takeaways for 2025.",
+            "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+            "author": {
+              "@type": "Person",
+              "name": "Sumit Dev"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "SumitDev Blog",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://sumitdev.com/favicon.ico"
+              }
+            },
+            "datePublished": "2025-07-01",
+            "dateModified": "2025-07-01",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://sumitdev.com/blog/wordpress-seo-case-study"
+            }
+          }
+        `}</script>
       </Helmet>
       <article className="prose mx-auto py-12">
         <h1>Case Study: 300% Traffic Growth with WordPress SEO (2025)</h1>
@@ -51,6 +89,58 @@ export default function WordPressSEOCaseStudy() {
         <p>
           <a href="/services-collaboration-hub" className="font-bold text-accent hover:underline">Contact us</a> for a free SEO audit or explore more <a href="/blog" className="text-accent hover:underline">case studies</a>.
         </p>
+        {/* FAQ Section for SEO */}
+        <section className="my-12">
+          <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold">How do you achieve 300% organic growth with WordPress SEO?</h3>
+              <p>By combining technical SEO audits, schema markup, Core Web Vitals optimization, and content aligned with user intent, you can dramatically increase organic traffic.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold">What is schema markup and why is it important?</h3>
+              <p>Schema markup is code that helps search engines understand your content, enabling rich results like FAQs, reviews, and product info in Google search.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold">How important are Core Web Vitals for SEO?</h3>
+              <p>Core Web Vitals are essential for ranking in 2025. They measure speed, responsiveness, and visual stability, directly impacting user experience and SEO.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQPage Structured Data for SEO */}
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do you achieve 300% organic growth with WordPress SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "By combining technical SEO audits, schema markup, Core Web Vitals optimization, and content aligned with user intent, you can dramatically increase organic traffic."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is schema markup and why is it important?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Schema markup is code that helps search engines understand your content, enabling rich results like FAQs, reviews, and product info in Google search."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How important are Core Web Vitals for SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Core Web Vitals are essential for ranking in 2025. They measure speed, responsiveness, and visual stability, directly impacting user experience and SEO."
+                }
+              }
+            ]
+          }
+        `}</script>
       </article>
     </>
   );
