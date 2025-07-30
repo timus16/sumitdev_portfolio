@@ -94,7 +94,7 @@ const InteractiveHomepage = () => {
                   <Icon name="Phone" size={22} className="mr-2 group-hover:animate-pulse" />
                   Call Now
                 </a>
-                <a href="https://www.linkedin.com/in/sumitgupta7/" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center px-6 py-2 bg-[#0077b5] text-white font-semibold rounded-lg shadow hover:bg-[#005983] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent">
+                <a href="https://www.linkedin.com/in/sumitkumar-gupta-react/" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center px-6 py-2 bg-[#0077b5] text-white font-semibold rounded-lg shadow hover:bg-[#005983] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent">
                   <Icon name="Linkedin" size={22} className="mr-2 group-hover:animate-spin" />
                   LinkedIn
                 </a>
@@ -118,7 +118,7 @@ const InteractiveHomepage = () => {
                 Building high-performance websites & apps for modern businesses. Trusted by startups & enterprises in Mumbai and beyond.
               </p>
               <div className="flex space-x-3 mt-2">
-                <a href="https://www.linkedin.com/in/sumitgupta7/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Linkedin" size={22} /></a>
+                <a href="https://www.linkedin.com/in/sumitkumar-gupta-react/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Linkedin" size={22} /></a>
                 <a href="mailto:sumitg7@zohomail.in" aria-label="Email" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Mail" size={22} /></a>
                 <a href="tel:+919137021658" aria-label="Phone" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Phone" size={22} /></a>
                 <a href="https://github.com/timus16" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Github" size={22} /></a>
