@@ -83,30 +83,150 @@ const Header = () => {
             ? 'bg-background/95 backdrop-blur-brand shadow-subtle border-b border-border'
             : 'bg-transparent'
         }`}
+        role="banner"
+        aria-label="Main site header"
       >
         <div className="w-full">
-          <div className="flex items-center justify-between h-16 px-4 lg:px-6">
-          {/* Logo */}
-          <Link 
-            to="/3d-interactive-homepage" 
-            className="flex items-center space-x-3 group"
-            onClick={closeMenu}
-          >
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-floating group-hover:shadow-dramatic transition-all duration-normal">
-                <span className="text-white font-bold text-lg font-headline">S</span>
+          <div className="flex items-center justify-between h-16 px-4 lg:px-10 gap-4">
+            {/* Logo & Brand */}
+            <Link 
+              to="/3d-interactive-homepage" 
+              className="flex items-center space-x-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              onClick={closeMenu}
+              aria-label="SumitDev Home"
+            >
+              <div className="relative">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-floating group-hover:shadow-dramatic transition-all duration-normal">
+                  <span className="text-white font-bold text-lg font-headline">S</span>
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse-slow"></div>
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse-slow"></div>
+              <div className="hidden sm:block">
+                <span className="text-xl font-bold font-headline text-primary group-hover:text-gradient-primary transition-all duration-normal">
+                  SumitDev
+                </span>
+                <span className="ml-2 px-2 py-0.5 rounded bg-accent/10 text-accent text-xs font-semibold align-middle">Portfolio</span>
+              </div>
+            </Link>
+
+            {/* Navigation - Desktop */}
+            <nav className="hidden lg:flex items-center space-x-2" aria-label="Primary">
+              {navigationItems.map((item) => (
+                item.dropdown ? (
+                  <div key={item.name} className="relative group">
+                    <button className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-haspopup="true" aria-expanded="false">
+                      <Icon name={item.icon} size={18} />
+                      <span>{item.name}</span>
+                      <Icon name="ChevronDown" size={16} className="group-hover:rotate-180 transition-transform duration-normal" />
+                    </button>
+                    <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-lg shadow-floating opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-normal z-dropdown">
+                      {item.dropdown.map((sub) => (
+                        <Link
+                          key={sub.path}
+                          to={sub.path}
+                          className={`flex items-center space-x-3 px-4 py-3 text-sm font-body transition-all duration-normal first:rounded-t-lg last:rounded-b-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                            isActivePath(sub.path)
+                              ? 'bg-primary text-primary-foreground'
+                              : 'text-text-primary hover:bg-surface'
+                          }`}
+                        >
+                          <Icon name={sub.icon} size={16} />
+                          <span>{sub.name}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                      isActivePath(item.path)
+                        ? 'bg-primary text-primary-foreground shadow-subtle'
+                        : 'text-text-primary hover:bg-surface hover:text-primary'
+                    }`}
+                  >
+                    <Icon name={item.icon} size={18} />
+                    <span>{item.name}</span>
+                  </Link>
+                )
+              ))}
+              {/* More Dropdown */}
+              <div className="relative group">
+                <button className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+                  <Icon name="MoreHorizontal" size={18} />
+                  <span>More</span>
+                  <Icon name="ChevronDown" size={16} className="group-hover:rotate-180 transition-transform duration-normal" />
+                </button>
+                <div className="absolute top-full right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-floating opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-normal z-dropdown">
+                  {moreItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className={`flex items-center space-x-3 px-4 py-3 text-sm font-body transition-all duration-normal first:rounded-t-lg last:rounded-b-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                        isActivePath(item.path)
+                          ? 'bg-primary text-primary-foreground'
+                          : 'text-text-primary hover:bg-surface'
+                      }`}
+                    >
+                      <Icon name={item.icon} size={16} />
+                      <span>{item.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </nav>
+
+            {/* CTA & Social - Desktop */}
+            <div className="hidden md:flex items-center space-x-4">
+              <a
+                href="https://x.com/sumit23679"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SumitDev on X (Twitter)"
+                className="text-primary-foreground/80 hover:text-accent transition-colors duration-200"
+              >
+                <Icon name="Twitter" size={22} />
+              </a>
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="font-cta"
+                onClick={() => {
+                  window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20am%20interested%20in%20a%20Free%20SEO%20Audit%20for%20my%20website!', '_blank');
+                }}
+              >
+                Free SEO Audit (WhatsApp)
+              </Button>
+              <Button 
+                variant="default" 
+                size="sm"
+                iconName="ArrowRight"
+                iconPosition="right"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta"
+                onClick={() => {
+                  window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20want%20to%20start%20a%20project%20with%20you!', '_blank');
+                }}
+              >
+                Start Project (WhatsApp)
+              </Button>
             </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold font-headline text-primary group-hover:text-gradient-primary transition-all duration-normal">
-                SumitDev
-              </h1>
-              <p className="text-xs text-text-secondary font-body -mt-1">
-                SEO-Driven Development
-              </p>
-            </div>
-          </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="lg:hidden p-2 rounded-lg text-text-primary hover:bg-surface transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              <Icon
+                name={isMenuOpen ? "X" : "Menu"}
+                size={24}
+                className="transition-transform duration-normal"
+              />
+            </button>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
