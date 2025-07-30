@@ -223,7 +223,7 @@ const Header = () => {
               <Icon
                 name={isMenuOpen ? "X" : "Menu"}
                 size={24}
-                className="transition-transform duration-normal"
+                Start Project
               />
             </button>
           </div>
