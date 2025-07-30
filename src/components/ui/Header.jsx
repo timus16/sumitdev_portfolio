@@ -196,7 +196,7 @@ const Header = () => {
                   window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20am%20interested%20in%20a%20Free%20SEO%20Audit%20for%20my%20website!', '_blank');
                 }}
               >
-                Free SEO Audit (WhatsApp)
+                Free SEO Audit
               </Button>
               <Button 
                 variant="default" 
@@ -208,7 +208,7 @@ const Header = () => {
                   window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20want%20to%20start%20a%20project%20with%20you!', '_blank');
                 }}
               >
-                Start Project (WhatsApp)
+                Start Project
               </Button>
             </div>
 
