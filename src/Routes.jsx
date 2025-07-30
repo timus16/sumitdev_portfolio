@@ -19,6 +19,12 @@ import FlutterVsNativePerformance from "./pages/blog/flutter-vs-native-performan
 import ShopifyConversionBoost from "./pages/blog/shopify-conversion-boost";
 import BlogIndex from "./pages/blog";
 
+// 3D Portfolio Section
+import Portfolio3D from "./pages/portfolio-3d";
+import Project1 from "./pages/portfolio-3d/project-1";
+import Project2 from "./pages/portfolio-3d/project-2";
+import Project3 from "./pages/portfolio-3d/project-3";
+
 const Routes = () => {
   return (
     <BrowserRouter>
@@ -40,6 +46,12 @@ const Routes = () => {
         <Route path="/blog/react-native-app-case-study" element={<ReactNativeAppCaseStudy />} />
         <Route path="/blog/flutter-vs-native-performance" element={<FlutterVsNativePerformance />} />
         <Route path="/blog/shopify-conversion-boost" element={<ShopifyConversionBoost />} />
+
+        {/* 3D Portfolio Section */}
+        <Route path="/portfolio-3d" element={<Portfolio3D />} />
+        <Route path="/portfolio-3d/project-1" element={<Project1 />} />
+        <Route path="/portfolio-3d/project-2" element={<Project2 />} />
+        <Route path="/portfolio-3d/project-3" element={<Project3 />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>
