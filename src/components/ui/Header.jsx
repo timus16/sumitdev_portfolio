@@ -105,7 +105,6 @@ const Header = () => {
                 <span className="text-xl font-bold font-headline text-primary group-hover:text-gradient-primary transition-all duration-normal">
                   SumitDev
                 </span>
-                <span className="ml-2 px-2 py-0.5 rounded bg-accent/10 text-accent text-xs font-semibold align-middle">Portfolio</span>
               </div>
             </Link>
 
