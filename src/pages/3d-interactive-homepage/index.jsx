@@ -159,7 +159,7 @@ const InteractiveHomepage = () => {
                   <Icon name="Send" size={18} className="animate-pulse" />
                   Send Message
                 </button>
-                <p className="text-xs text-center text-primary-foreground/80 mt-2">Or call <a href="tel:+919137021658" className="text-accent font-semibold">+91 91370 21658</a></p>
+                <p className="text-xs text-center text-primary-foreground/80 mt-2">Or call <a href="tel:+919137021658" className="text-accent font-semibold">9137021658</a></p>
               </form>
             </div>
           </div>

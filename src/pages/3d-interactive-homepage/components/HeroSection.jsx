@@ -291,8 +291,11 @@ const HeroSection = () => {
               >
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5"></div>
-                
-                {/* Profile Image removed as requested */}
+
+                {/* Personal Brand Name */}
+                <div className="relative z-20 flex flex-col items-center justify-center mb-6">
+                  <span className="text-3xl lg:text-4xl font-bold font-headline text-primary drop-shadow animate-fade-in-up">Sumit Gupta</span>
+                </div>
 
             {/* Experience Highlight */}
             <div className="relative z-10 flex flex-col items-center justify-center mb-4">
