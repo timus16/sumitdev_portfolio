@@ -57,6 +57,7 @@ const blogPosts = [
 
 import { motion } from 'framer-motion';
 
+function BlogIndex() {
   return (
     <>
       <Helmet>
@@ -99,4 +100,5 @@ import { motion } from 'framer-motion';
       </section>
     </>
   );
+}
 export default BlogIndex;
