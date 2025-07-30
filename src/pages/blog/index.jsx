@@ -99,4 +99,4 @@ import { motion } from 'framer-motion';
       </section>
     </>
   );
-}
+export default BlogIndex;
