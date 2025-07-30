@@ -17,6 +17,7 @@ import PerformanceOptimizationGuide from "./pages/blog/performance-optimization-
 import ReactNativeAppCaseStudy from "./pages/blog/react-native-app-case-study";
 import FlutterVsNativePerformance from "./pages/blog/flutter-vs-native-performance";
 import ShopifyConversionBoost from "./pages/blog/shopify-conversion-boost";
+import BlogIndex from "./pages/blog";
 
 const Routes = () => {
   return (
@@ -32,6 +33,7 @@ const Routes = () => {
         <Route path="/skills-expertise-hub" element={<SkillsExpertiseHub />} />
         <Route path="/seo-results-dashboard" element={<SeoResultsDashboard />} />
         <Route path="/services-collaboration-hub" element={<ServicesCollaborationHub />} />
+        <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/wordpress-seo-case-study" element={<WordPressSEOCaseStudy />} />
         <Route path="/blog/technical-seo-audit-success" element={<TechnicalSEOAuditSuccess />} />
         <Route path="/blog/performance-optimization-guide" element={<PerformanceOptimizationGuide />} />
