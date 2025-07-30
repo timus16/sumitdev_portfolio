@@ -10,7 +10,7 @@ const blogPosts = [
     title: 'How Technical SEO Audits Drive Results (2025)',
     date: 'June 2025',
     summary: 'Technical SEO audits remain the foundation for sustainable search growth. See how a SaaS startup achieved +180% organic sessions and a 98/100 mobile usability score.',
-    image: '/public/assets/images/seo-audit.jpg',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
     tags: ['Technical SEO', 'Audit', 'Growth'],
   },
   {
@@ -18,7 +18,7 @@ const blogPosts = [
     title: 'Case Study: 300% Traffic Growth with WordPress SEO (2025)',
     date: 'July 2025',
     summary: 'A Mumbai e-commerce client saw 300% organic growth after technical SEO, schema, and Core Web Vitals optimization. Learn the key takeaways.',
-    image: '/public/assets/images/wordpress-seo.jpg',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80',
     tags: ['WordPress', 'SEO', 'Case Study'],
   },
   {
@@ -26,7 +26,7 @@ const blogPosts = [
     title: 'Flutter vs Native: Performance Deep Dive',
     date: '2025',
     summary: 'A technical comparison of Flutter and native mobile app performance, with real-world benchmarks and optimization tips.',
-    image: '/public/assets/images/flutter-vs-native.jpg',
+    image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&w=1200&q=80',
     tags: ['Flutter', 'Mobile', 'Performance'],
   },
   {
@@ -34,7 +34,7 @@ const blogPosts = [
     title: 'Web Performance Optimization Guide',
     date: '2025',
     summary: 'Comprehensive guide to optimizing web performance for modern JavaScript frameworks, including Core Web Vitals and advanced techniques.',
-    image: '/public/assets/images/performance-guide.jpg',
+    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80',
     tags: ['Performance', 'Web Vitals', 'Optimization'],
   },
   {
@@ -42,7 +42,7 @@ const blogPosts = [
     title: 'React Native App: Case Study',
     date: '2025',
     summary: 'How a React Native app achieved high performance and user engagement in a competitive market.',
-    image: '/public/assets/images/react-native-case.jpg',
+    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80',
     tags: ['React Native', 'Mobile', 'Case Study'],
   },
   {
@@ -50,7 +50,7 @@ const blogPosts = [
     title: 'Shopify Conversion Boost: Real Results',
     date: '2025',
     summary: 'Case study on boosting Shopify store conversions through technical SEO, UX, and speed improvements.',
-    image: '/public/assets/images/shopify-boost.jpg',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80',
     tags: ['Shopify', 'Conversion', 'UX'],
   },
 ];

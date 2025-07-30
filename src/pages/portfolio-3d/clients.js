@@ -51,5 +51,44 @@ export const clients = [
     category: "Mobility",
     icon: "Car",
     images: ["/public/assets/images/berlin_project.png"]
+  },
+  {
+    id: 5,
+    name: "Munich HealthTech",
+    city: "Munich, Germany",
+    logo: "/public/assets/images/german_international_logo.png",
+    description: "AI-powered telemedicine platform for European clinics.",
+    primaryColor: "#2563eb",
+    secondaryColor: "#60a5fa",
+    year: 2025,
+    category: "HealthTech",
+    icon: "HeartPulse",
+    images: ["/public/assets/images/no_image.png"]
+  },
+  {
+    id: 6,
+    name: "Paris Creatives",
+    city: "Paris, France",
+    logo: "/public/assets/images/no_image.png",
+    description: "Digital agency delivering immersive web experiences for global brands.",
+    primaryColor: "#e11d48",
+    secondaryColor: "#f472b6",
+    year: 2025,
+    category: "Creative",
+    icon: "Palette",
+    images: ["/public/assets/images/no_image.png"]
+  },
+  {
+    id: 7,
+    name: "Zurich FinServe",
+    city: "Zurich, Switzerland",
+    logo: "/public/assets/images/no_image.png",
+    description: "Cloud-native banking solutions for the DACH region.",
+    primaryColor: "#0ea5e9",
+    secondaryColor: "#38bdf8",
+    year: 2025,
+    category: "Fintech",
+    icon: "Banknote",
+    images: ["/public/assets/images/no_image.png"]
   }
 ];
