@@ -20,6 +20,8 @@ export default function PerformanceOptimizationGuide() {
         <meta name="twitter:title" content="Web Performance Optimization Guide | SumitDev Blog" />
         <meta name="twitter:description" content="How site speed improvements led to a 22% conversion boost. Actionable tips for Core Web Vitals, code splitting, and caching in 2025." />
         <meta name="twitter:image" content="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" />
+        <meta name="twitter:site" content="@sumit23679" />
+        <meta name="twitter:creator" content="@sumit23679" />
         <link rel="canonical" href="https://sumitdev.com/blog/performance-optimization-guide" />
         {/* Structured Data for SEO (JSON-LD) */}
         <script type="application/ld+json">{`

@@ -161,14 +161,23 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button & Social Icon */}
           <div className="hidden md:flex items-center space-x-4">
+            <a
+              href="https://x.com/sumit23679"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="SumitDev on X (Twitter)"
+              className="text-primary-foreground/80 hover:text-accent transition-colors duration-200"
+            >
+              <Icon name="Twitter" size={22} />
+            </a>
             <Button 
               variant="outline" 
               size="sm"
               className="font-cta"
               onClick={() => {
-                window.open('https://wa.me/919137021658?text=Hi%20Sumit%2C%20I%20am%20interested%20in%20a%20Free%20SEO%20Audit%20for%20my%20website!', '_blank');
+                window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20am%20interested%20in%20a%20Free%20SEO%20Audit%20for%20my%20website!', '_blank');
               }}
             >
               Free SEO Audit (WhatsApp)
@@ -180,7 +189,7 @@ const Header = () => {
               iconPosition="right"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta"
               onClick={() => {
-                window.open('https://wa.me/919137021658?text=Hi%20Sumit%2C%20I%20want%20to%20start%20a%20project%20with%20you!', '_blank');
+                window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20want%20to%20start%20a%20project%20with%20you!', '_blank');
               }}
             >
               Start Project (WhatsApp)

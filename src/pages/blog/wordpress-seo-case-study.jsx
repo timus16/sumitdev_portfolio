@@ -19,6 +19,8 @@ export default function WordPressSEOCaseStudy() {
         <meta name="twitter:title" content="Case Study: 300% Traffic Growth with WordPress SEO (2025) | SumitDev Blog" />
         <meta name="twitter:description" content="How a Mumbai e-commerce client achieved 300% organic growth with technical SEO, schema, Core Web Vitals, and modern SEO strategies. Actionable takeaways for 2025." />
         <meta name="twitter:image" content="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" />
+        <meta name="twitter:site" content="@sumit23679" />
+        <meta name="twitter:creator" content="@sumit23679" />
         <link rel="canonical" href="https://sumitdev.com/blog/wordpress-seo-case-study" />
         {/* Structured Data for SEO (JSON-LD) */}
         <script type="application/ld+json">{`
@@ -49,46 +51,65 @@ export default function WordPressSEOCaseStudy() {
           }
         `}</script>
       </Helmet>
-      <article className="prose mx-auto py-12">
-        <h1>Case Study: 300% Traffic Growth with WordPress SEO (2025)</h1>
+      <article className="prose mx-auto py-12 px-4 max-w-3xl">
+        <h1 className="mb-2">Case Study: 300% Traffic Growth with WordPress SEO (2025)</h1>
         <p className="text-sm text-gray-500 mb-4">Published July 2025 · <a href="/blog" className="text-accent hover:underline">← Back to Blog</a></p>
-        <figure className="mb-6">
+        <figure className="mb-8">
           <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="WordPress SEO growth analytics dashboard" className="rounded-xl shadow-lg w-full max-w-2xl mx-auto" loading="lazy" />
           <figcaption className="text-xs text-gray-500 mt-2 text-center">AI-generated: Analytics dashboard showing SEO growth for a WordPress site</figcaption>
         </figure>
-        <p>
-          In early 2025, a Mumbai-based e-commerce client approached us with a <strong>WordPress</strong> site struggling to gain organic traction. After a comprehensive <a href="/blog/technical-seo-audit-success" className="text-accent hover:underline">technical SEO audit</a>, we implemented advanced <strong>schema markup</strong>, optimized <strong>Core Web Vitals</strong>, and restructured their content for search intent and keyword density.
-        </p>
-        <ul>
-          <li><strong>+300% organic traffic</strong> in 4 months</li>
-          <li><strong>Page speed</strong> improved from 5s to 1.8s (see <a href="/blog/performance-optimization-guide" className="text-accent hover:underline">Web Performance Optimization Guide</a>)</li>
-          <li><strong>Top 3 Google rankings</strong> for 12 new keywords</li>
-          <li>98/100 mobile usability score</li>
-        </ul>
-        <h2>SEO Strategy Breakdown</h2>
-        <ol>
-          <li><strong>Technical SEO Audit:</strong> Identified crawl errors, duplicate content, and missing meta tags. Used tools like Google Search Console and Screaming Frog.</li>
-          <li><strong>Schema & Structured Data:</strong> Added product, review, and FAQ schema for rich results. <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Learn more about schema</a>.</li>
-          <li><strong>Core Web Vitals:</strong> Optimized Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS). Used <a href="/blog/performance-optimization-guide" className="text-accent hover:underline">performance best practices</a>.</li>
-          <li><strong>Content Optimization:</strong> Increased keyword density for target terms ("WordPress SEO", "technical SEO", "schema", "Core Web Vitals") and added internal links to <a href="/blog" className="text-accent hover:underline">related case studies</a>.</li>
-        </ol>
-        <figure className="my-8">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Technical SEO audit process" className="rounded-xl shadow-lg w-full max-w-xl mx-auto" loading="lazy" />
-          <figcaption className="text-xs text-gray-500 mt-2 text-center">Royalty-free: Technical SEO audit in progress</figcaption>
-        </figure>
-        <h2>Results & Key Takeaways</h2>
-        <ul>
-          <li>Organic traffic up 300% (Google Analytics, Jan–May 2025)</li>
-          <li>12 new keywords in top 3 positions (SEMrush, Ahrefs)</li>
-          <li>Mobile usability: 98/100 (Google Lighthouse)</li>
-        </ul>
-        <p>
-          <strong>Key Takeaway:</strong> <span className="text-accent">Technical SEO</span> and <span className="text-accent">content alignment</span> with user intent can deliver exponential growth, even in competitive markets. For more actionable tips, see our <a href="/blog/technical-seo-audit-success" className="text-accent hover:underline">Technical SEO Audit Success</a> and <a href="/blog/performance-optimization-guide" className="text-accent hover:underline">Performance Optimization Guide</a>.
-        </p>
-        <h3>Want similar results?</h3>
-        <p>
-          <a href="/services-collaboration-hub" className="font-bold text-accent hover:underline">Contact us</a> for a free SEO audit or explore more <a href="/blog" className="text-accent hover:underline">case studies</a>.
-        </p>
+        <section className="mb-8">
+          <p className="lead text-lg mb-4">
+            In early 2025, a Mumbai-based e-commerce client approached us with a <strong>WordPress</strong> site struggling to gain organic traction. Their traffic had plateaued, and conversions were dropping despite regular content updates. The challenge: break through the noise in a competitive market and achieve sustainable, measurable growth.
+          </p>
+          <ul className="mb-4">
+            <li><strong>+300% organic traffic</strong> in 4 months</li>
+            <li><strong>Page speed</strong> improved from 5s to 1.8s (<a href="/blog/performance-optimization-guide" className="text-accent hover:underline">Web Performance Optimization Guide</a>)</li>
+            <li><strong>Top 3 Google rankings</strong> for 12 new keywords</li>
+            <li>98/100 mobile usability score</li>
+          </ul>
+        </section>
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-2">The Turning Point: Technical SEO Audit</h2>
+          <p>
+            Our first step was a <a href="/blog/technical-seo-audit-success" className="text-accent hover:underline">comprehensive technical SEO audit</a>. Using Google Search Console, Screaming Frog, and SEMrush, we uncovered crawl errors, duplicate content, slow mobile performance, and missing meta tags. We prioritized fixes that would have the highest impact on both users and search engines.
+          </p>
+          <figure className="my-8">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Technical SEO audit process" className="rounded-xl shadow-lg w-full max-w-xl mx-auto" loading="lazy" />
+            <figcaption className="text-xs text-gray-500 mt-2 text-center">Royalty-free: Technical SEO audit in progress</figcaption>
+          </figure>
+        </section>
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-2">Schema, Core Web Vitals & Content Overhaul</h2>
+          <p>
+            We implemented advanced <strong>schema markup</strong> (product, review, FAQ), optimized <strong>Core Web Vitals</strong> (LCP, FID, CLS), and restructured content for search intent and keyword density. Internal links were added to <a href="/blog" className="text-accent hover:underline">related case studies</a> and cornerstone content.
+          </p>
+          <ul>
+            <li>Product, review, and FAQ schema for rich results</li>
+            <li>Largest Contentful Paint (LCP) improved by 2.7s</li>
+            <li>First Input Delay (FID) reduced by 60%</li>
+            <li>Content rewritten for user intent and engagement</li>
+            <li>Internal links to <a href="/blog/technical-seo-audit-success" className="text-accent hover:underline">SEO audit</a> and <a href="/blog/performance-optimization-guide" className="text-accent hover:underline">performance guide</a></li>
+          </ul>
+        </section>
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-2">Results & Key Takeaways</h2>
+          <ul>
+            <li>Organic traffic up 300% (Google Analytics, Jan–May 2025)</li>
+            <li>12 new keywords in top 3 positions (SEMrush, Ahrefs)</li>
+            <li>Mobile usability: 98/100 (Google Lighthouse)</li>
+            <li>Conversion rate up 2.1x (Shopify Analytics)</li>
+          </ul>
+          <p className="mt-4">
+            <strong>Key Takeaway:</strong> <span className="text-accent">Technical SEO</span> and <span className="text-accent">content alignment</span> with user intent can deliver exponential growth, even in competitive markets. For more actionable tips, see our <a href="/blog/technical-seo-audit-success" className="text-accent hover:underline">Technical SEO Audit Success</a> and <a href="/blog/performance-optimization-guide" className="text-accent hover:underline">Performance Optimization Guide</a>.
+          </p>
+        </section>
+        <section className="mb-10 bg-accent/10 rounded-xl p-6 border border-accent">
+          <h3 className="text-xl font-bold mb-2">Want similar results?</h3>
+          <p>
+            <a href="/services-collaboration-hub" className="font-bold text-accent hover:underline">Contact us</a> for a free SEO audit or explore more <a href="/blog" className="text-accent hover:underline">case studies</a>.
+          </p>
+        </section>
         {/* FAQ Section for SEO */}
         <section className="my-12">
           <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>

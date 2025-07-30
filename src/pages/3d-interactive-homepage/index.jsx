@@ -154,7 +154,7 @@ const InteractiveHomepage = () => {
                 }).then(() => {
                   // WhatsApp redirect
                   const waMsg = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-                  window.open(`https://wa.me/919137021658?text=${waMsg}`, '_blank');
+                  window.open(`https://wa.me/9137021658?text=${waMsg}`, '_blank');
                   form.reset();
                   alert('Thank you! Your message was sent to email and WhatsApp.');
                 });
