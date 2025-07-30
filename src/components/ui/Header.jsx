@@ -13,6 +13,7 @@ const Header = () => {
     { name: 'Experience', path: '/experience-journey-timeline', icon: 'Clock' },
     { name: 'Skills', path: '/skills-expertise-hub', icon: 'Code' },
     { name: 'Portfolio', path: '/portfolio-showcase-galaxy', icon: 'Briefcase' },
+    { name: 'Blog', path: '/blog', icon: 'BookOpen' },
     { name: 'Results', path: '/seo-results-dashboard', icon: 'TrendingUp' }
   ];
 
