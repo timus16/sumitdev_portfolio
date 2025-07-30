@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import Header from '../../components/ui/Header';
 
 // Blog post metadata (add new posts here)
 const blogPosts = [
@@ -56,7 +57,6 @@ const blogPosts = [
 
 import { motion } from 'framer-motion';
 
-export default function BlogIndex() {
   return (
     <>
       <Helmet>
@@ -66,6 +66,7 @@ export default function BlogIndex() {
         <meta property="og:title" content="Blog | SEO, Performance & Case Studies | SumitDev" />
         <meta property="og:description" content="Explore interactive, SEO-optimized blog posts and case studies on web performance, technical SEO, and digital growth." />
       </Helmet>
+      <Header />
       <section className="max-w-5xl mx-auto py-16 px-4">
         <h1 className="text-4xl font-bold mb-8 text-center">Blog & Case Studies</h1>
         <div className="grid md:grid-cols-2 gap-8">
@@ -73,23 +74,23 @@ export default function BlogIndex() {
             <motion.div
               key={post.slug}
               className="group bg-white/90 dark:bg-card/90 border border-border rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col"
-              whileHover={{ scale: 1.03, y: -4 }}
+              whileHover={{ scale: 1.03, y: -4, boxShadow: '0 8px 32px 0 rgba(0,0,0,0.18)' }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <Link to={`/blog/${post.slug}`} className="block">
-                <img src={post.image} alt={post.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              <Link to={`/blog/${post.slug}`} className="block group">
+                <img src={post.image} alt={post.title} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" />
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex flex-wrap gap-2 mb-2">
                     {post.tags.map(tag => (
-                      <span key={tag} className="bg-accent/10 text-accent px-2 py-1 rounded-full text-xs font-semibold">{tag}</span>
+                      <span key={tag} className="bg-accent/10 text-accent px-2 py-1 rounded-full text-xs font-semibold group-hover:bg-accent group-hover:text-white transition-colors duration-200">{tag}</span>
                     ))}
                   </div>
                   <h2 className="text-2xl font-semibold text-primary group-hover:text-accent transition-colors mb-1">{post.title}</h2>
                   <div className="text-xs text-gray-500 mb-2">{post.date}</div>
-                  <p className="text-base text-gray-700 dark:text-gray-200 mb-4 flex-1">{post.summary}</p>
-                  <span className="inline-block mt-auto text-accent font-semibold group-hover:underline">Read more →</span>
+                  <p className="text-base text-gray-700 dark:text-gray-200 mb-4 flex-1 group-hover:text-primary-foreground transition-colors duration-200">{post.summary}</p>
+                  <span className="inline-block mt-auto text-accent font-semibold group-hover:underline group-hover:scale-105 transition-transform duration-200">Read more →</span>
                 </div>
               </Link>
             </motion.div>

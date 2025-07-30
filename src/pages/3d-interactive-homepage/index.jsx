@@ -140,7 +140,25 @@ const InteractiveHomepage = () => {
             {/* Contact Form */}
             <div className="md:col-span-1" id="footer-contact-form">
               <h4 className="font-bold font-headline mb-4">Contact</h4>
-              <form action="https://formspree.io/f/xwkgyyqg" method="POST" className="space-y-4 bg-card/90 rounded-xl shadow-floating p-6">
+              <form action="https://formspree.io/f/xwkgyyqg" method="POST" className="space-y-4 bg-card/90 rounded-xl shadow-floating p-6" onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.target;
+                const name = form.name.value;
+                const email = form.email.value;
+                const message = form.message.value;
+                // Send to Formspree
+                fetch(form.action, {
+                  method: 'POST',
+                  headers: { 'Accept': 'application/json' },
+                  body: new FormData(form)
+                }).then(() => {
+                  // WhatsApp redirect
+                  const waMsg = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+                  window.open(`https://wa.me/919137021658?text=${waMsg}`, '_blank');
+                  form.reset();
+                  alert('Thank you! Your message was sent to email and WhatsApp.');
+                });
+              }}>
                 <input type="hidden" name="_subject" value="Portfolio Contact Form Submission" />
                 <input type="hidden" name="to" value="sumitg7@zohomail.in" />
                 <div>

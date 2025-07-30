@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import Header from '../../components/ui/Header';
 
 export default function PerformanceOptimizationGuide() {
   return (
@@ -8,7 +9,14 @@ export default function PerformanceOptimizationGuide() {
         <title>Web Performance Optimization Guide | SumitDev Blog</title>
         <meta name="description" content="How site speed improvements led to a 22% conversion boost. Actionable tips for Core Web Vitals, code splitting, and caching in 2025." />
       </Helmet>
+      <Header />
       <article className="prose mx-auto py-12">
+        <img
+          src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80"
+          alt="AI generated: Futuristic website performance dashboard"
+          className="rounded-xl shadow-lg w-full max-w-2xl mx-auto mb-8"
+          loading="lazy"
+        />
         <h1>Blog: Speed Optimization for Higher Conversions (2025)</h1>
         <p className="text-sm text-gray-500 mb-4">Published May 2025</p>
         <p>
