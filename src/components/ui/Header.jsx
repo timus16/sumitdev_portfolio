@@ -96,7 +96,7 @@ const Header = () => {
               aria-label="SumitDev Home"
             >
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-floating group-hover:shadow-dramatic transition-all duration-normal">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center shadow-floating group-hover:shadow-dramatic group-hover:scale-105 group-active:scale-95 transition-all duration-200">
                   <span className="text-white font-bold text-lg font-headline">S</span>
                 </div>
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse-slow"></div>
@@ -114,9 +114,9 @@ const Header = () => {
               {navigationItems.map((item) => (
                 item.dropdown ? (
                   <div key={item.name} className="relative group">
-                    <button className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-haspopup="true" aria-expanded="false">
+                    <button className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent group/nav" aria-haspopup="true" aria-expanded="false">
                       <Icon name={item.icon} size={18} />
-                      <span>{item.name}</span>
+                      <span className="relative after:content-[''] after:block after:h-[2px] after:bg-accent after:scale-x-0 group-hover/nav:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left">{item.name}</span>
                       <Icon name="ChevronDown" size={16} className="group-hover:rotate-180 transition-transform duration-normal" />
                     </button>
                     <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-lg shadow-floating opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-normal z-dropdown">
@@ -140,14 +140,14 @@ const Header = () => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent group/nav ${
                       isActivePath(item.path)
                         ? 'bg-primary text-primary-foreground shadow-subtle'
                         : 'text-text-primary hover:bg-surface hover:text-primary'
                     }`}
                   >
                     <Icon name={item.icon} size={18} />
-                    <span>{item.name}</span>
+                    <span className="relative after:content-[''] after:block after:h-[2px] after:bg-accent after:scale-x-0 group-hover/nav:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left">{item.name}</span>
                   </Link>
                 )
               ))}
@@ -177,58 +177,7 @@ const Header = () => {
               </div>
             </nav>
 
-            {/* CTA & Social - Desktop */}
-            <div className="hidden md:flex items-center space-x-4">
-              <a
-                href="https://x.com/sumit23679"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="SumitDev on X (Twitter)"
-                className="text-primary-foreground/80 hover:text-accent transition-colors duration-200"
-              >
-                <Icon name="Twitter" size={22} />
-              </a>
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="font-cta"
-                onClick={() => {
-                  window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20am%20interested%20in%20a%20Free%20SEO%20Audit%20for%20my%20website!', '_blank');
-                }}
-              >
-                Free SEO Audit
-              </Button>
-              <Button 
-                variant="default" 
-                size="sm"
-                iconName="ArrowRight"
-                iconPosition="right"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta"
-                onClick={() => {
-                  window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20want%20to%20start%20a%20project%20with%20you!', '_blank');
-                }}
-              >
-                Start Project
-              </Button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMenu}
-              className="lg:hidden p-2 rounded-lg text-text-primary hover:bg-surface transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              aria-label="Toggle menu"
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              <Icon
-                name={isMenuOpen ? "X" : "Menu"}
-                size={24}
-                className="transition-transform duration-normal"
-              />
-            </button>
-          </div>
-
-          {/* CTA Button & Social Icon */}
+          {/* CTA & Social - Desktop (Single Instance) */}
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="https://x.com/sumit23679"
@@ -242,41 +191,29 @@ const Header = () => {
             <Button 
               variant="outline" 
               size="sm"
-              className="font-cta"
+              className="font-cta transition-transform duration-150 hover:scale-105 active:scale-95"
               onClick={() => {
                 window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20am%20interested%20in%20a%20Free%20SEO%20Audit%20for%20my%20website!', '_blank');
               }}
             >
-              Free SEO Audit (WhatsApp)
+              Free SEO Audit
             </Button>
             <Button 
               variant="default" 
               size="sm"
               iconName="ArrowRight"
               iconPosition="right"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta transition-transform duration-150 hover:scale-105 active:scale-95"
               onClick={() => {
                 window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20want%20to%20start%20a%20project%20with%20you!', '_blank');
               }}
             >
-              Start Project (WhatsApp)
+              Start Project
             </Button>
           </div>
+          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="lg:hidden p-2 rounded-lg text-text-primary hover:bg-surface transition-all duration-normal"
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-          >
-            <Icon
-              name={isMenuOpen ? "X" : "Menu"}
-              size={24}
-              className="transition-transform duration-normal"
-            />
-          </button>
+          {/* ...existing code... */}
         </div>
 
         {/* Mobile Menu */}
@@ -338,7 +275,10 @@ const Header = () => {
                 variant="outline"
                 fullWidth
                 className="font-cta"
-                onClick={closeMenu}
+                onClick={() => {
+                  window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20am%20interested%20in%20a%20Free%20SEO%20Audit%20for%20my%20website!', '_blank');
+                  closeMenu();
+                }}
               >
                 Free SEO Audit
               </Button>
@@ -348,7 +288,10 @@ const Header = () => {
                 iconName="ArrowRight"
                 iconPosition="right"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta"
-                onClick={closeMenu}
+                onClick={() => {
+                  window.open('https://wa.me/9137021658?text=Hi%20Sumit%2C%20I%20want%20to%20start%20a%20project%20with%20you!', '_blank');
+                  closeMenu();
+                }}
               >
                 Start Project
               </Button>
