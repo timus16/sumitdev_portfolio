@@ -12,7 +12,17 @@ const Header = () => {
     { name: 'Home', path: '/3d-interactive-homepage', icon: 'Home' },
     { name: 'Experience', path: '/experience-journey-timeline', icon: 'Clock' },
     { name: 'Skills', path: '/skills-expertise-hub', icon: 'Code' },
-    { name: 'Portfolio', path: '/portfolio-showcase-galaxy', icon: 'Briefcase' },
+    {
+      name: 'Portfolio',
+      icon: 'Briefcase',
+      dropdown: [
+        { name: 'Showcase Galaxy', path: '/portfolio-showcase-galaxy', icon: 'Star' },
+        { name: '3D Portfolio', path: '/portfolio-3d', icon: 'Globe' },
+        { name: 'Fintech App', path: '/portfolio-3d/project-1', icon: 'Activity' },
+        { name: 'E-commerce Galaxy', path: '/portfolio-3d/project-2', icon: 'ShoppingCart' },
+        { name: 'Data Dashboard 3D', path: '/portfolio-3d/project-3', icon: 'BarChart2' },
+      ]
+    },
     { name: 'Blog', path: '/blog', icon: 'BookOpen' },
     { name: 'Results', path: '/seo-results-dashboard', icon: 'TrendingUp' }
   ];
@@ -86,20 +96,45 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navigationItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body transition-all duration-normal ${
-                  isActivePath(item.path)
-                    ? 'bg-primary text-primary-foreground shadow-subtle'
-                    : 'text-text-primary hover:bg-surface hover:text-primary'
-                }`}
-              >
-                <Icon name={item.icon} size={18} />
-                <span>{item.name}</span>
-              </Link>
+              item.dropdown ? (
+                <div key={item.name} className="relative group">
+                  <button className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary transition-all duration-normal">
+                    <Icon name={item.icon} size={18} />
+                    <span>{item.name}</span>
+                    <Icon name="ChevronDown" size={16} className="group-hover:rotate-180 transition-transform duration-normal" />
+                  </button>
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-lg shadow-floating opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-normal z-dropdown">
+                    {item.dropdown.map((sub) => (
+                      <Link
+                        key={sub.path}
+                        to={sub.path}
+                        className={`flex items-center space-x-3 px-4 py-3 text-sm font-body transition-all duration-normal first:rounded-t-lg last:rounded-b-lg ${
+                          isActivePath(sub.path)
+                            ? 'bg-primary text-primary-foreground'
+                            : 'text-text-primary hover:bg-surface'
+                        }`}
+                      >
+                        <Icon name={sub.icon} size={16} />
+                        <span>{sub.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body transition-all duration-normal ${
+                    isActivePath(item.path)
+                      ? 'bg-primary text-primary-foreground shadow-subtle'
+                      : 'text-text-primary hover:bg-surface hover:text-primary'
+                  }`}
+                >
+                  <Icon name={item.icon} size={18} />
+                  <span>{item.name}</span>
+                </Link>
+              )
             ))}
-            
             {/* More Dropdown */}
             <div className="relative group">
               <button className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary transition-all duration-normal">
@@ -107,7 +142,6 @@ const Header = () => {
                 <span>More</span>
                 <Icon name="ChevronDown" size={16} className="group-hover:rotate-180 transition-transform duration-normal" />
               </button>
-              
               <div className="absolute top-full right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-floating opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-normal z-dropdown">
                 {moreItems.map((item) => (
                   <Link
@@ -180,20 +214,47 @@ const Header = () => {
           style={{ willChange: 'opacity, transform' }}
         >
           <nav className="px-4 py-4 space-y-2">
-            {[...navigationItems, ...moreItems].map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={closeMenu}
-                className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium font-body transition-all duration-normal ${
-                  isActivePath(item.path)
-                    ? 'bg-primary text-primary-foreground shadow-subtle'
-                    : 'text-text-primary hover:bg-surface'
-                }`}
-              >
-                <Icon name={item.icon} size={20} />
-                <span>{item.name}</span>
-              </Link>
+            {navigationItems.map((item) => (
+              item.dropdown ? (
+                <div key={item.name} className="group">
+                  <button className="flex items-center space-x-2 px-4 py-3 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary w-full">
+                    <Icon name={item.icon} size={20} />
+                    <span>{item.name}</span>
+                    <Icon name="ChevronDown" size={16} className="group-hover:rotate-180 transition-transform duration-normal" />
+                  </button>
+                  <div className="pl-6 mt-1 space-y-1">
+                    {item.dropdown.map((sub) => (
+                      <Link
+                        key={sub.path}
+                        to={sub.path}
+                        onClick={closeMenu}
+                        className={`flex items-center space-x-3 px-4 py-2 rounded-lg text-sm font-body transition-all duration-normal ${
+                          isActivePath(sub.path)
+                            ? 'bg-primary text-primary-foreground'
+                            : 'text-text-primary hover:bg-surface'
+                        }`}
+                      >
+                        <Icon name={sub.icon} size={16} />
+                        <span>{sub.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={closeMenu}
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium font-body transition-all duration-normal ${
+                    isActivePath(item.path)
+                      ? 'bg-primary text-primary-foreground shadow-subtle'
+                      : 'text-text-primary hover:bg-surface'
+                  }`}
+                >
+                  <Icon name={item.icon} size={20} />
+                  <span>{item.name}</span>
+                </Link>
+              )
             ))}
             {/* Mobile CTAs */}
             <div className="pt-4 space-y-3 border-t border-border">
