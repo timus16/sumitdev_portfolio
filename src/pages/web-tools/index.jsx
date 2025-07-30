@@ -1,4 +1,5 @@
 import React from "react";
+import Header from '../../components/ui/Header';
 import { Link } from "react-router-dom";
 import { FaCode, FaPalette, FaRegClone, FaFileCode, FaSearch, FaImage, FaMobileAlt, FaQrcode } from "react-icons/fa";
 
@@ -15,34 +16,37 @@ const tools = [
 
 export default function WebToolsIndex() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-background via-surface to-muted py-12 px-4">
-      <div className="w-full max-w-2xl mx-auto">
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-primary mb-2 tracking-tight">Web Tools <span className="text-gradient-primary">Hub</span></h1>
-          <p className="text-lg text-text-secondary">A collection of free, interactive tools for developers and creators. No login required.</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {tools.map((tool) => (
-            <Link
-              key={tool.name}
-              to={tool.path}
-              className="group block glass-morphism rounded-2xl p-6 shadow-floating hover:shadow-dramatic transition-all duration-300 border border-border hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-              style={{ WebkitBackdropFilter: 'blur(16px)', backdropFilter: 'blur(16px)' }}
-            >
-              <div className="flex items-center gap-4 mb-2">
-                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-white/60 to-accent/10 shadow-subtle group-hover:scale-110 transition-transform">
-                  {tool.icon}
+    <>
+      <Header />
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-background via-surface to-muted py-12 px-4">
+        <div className="w-full max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <h1 className="text-3xl font-bold text-primary mb-2 tracking-tight">Web Tools <span className="text-gradient-primary">Hub</span></h1>
+            <p className="text-lg text-text-secondary">A collection of free, interactive tools for developers and creators. No login required.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {tools.map((tool) => (
+              <Link
+                key={tool.name}
+                to={tool.path}
+                className="group block glass-morphism rounded-2xl p-6 shadow-floating hover:shadow-dramatic transition-all duration-300 border border-border hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent hover:scale-105 active:scale-95"
+                style={{ WebkitBackdropFilter: 'blur(16px)', backdropFilter: 'blur(16px)' }}
+              >
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-white/60 to-accent/10 shadow-subtle group-hover:scale-110 transition-transform">
+                    {tool.icon}
+                  </div>
+                  <span className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">{tool.name}</span>
                 </div>
-                <span className="text-xl font-semibold text-primary group-hover:text-accent transition-colors">{tool.name}</span>
-              </div>
-              <div className="text-text-secondary text-sm mt-1">{tool.desc}</div>
-            </Link>
-          ))}
-        </div>
-        <div className="mt-10 text-center text-xs text-text-secondary opacity-70">
-          <span>iOS-inspired UI &mdash; Built with ❤️ by SumitDev</span>
+                <div className="text-text-secondary text-sm mt-1">{tool.desc}</div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 text-center text-xs text-text-secondary opacity-70">
+            <span>iOS-inspired UI &mdash; Built with ❤️ by SumitDev</span>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
