@@ -134,10 +134,10 @@ const Header = () => {
               size="sm"
               className="font-cta"
               onClick={() => {
-                window.location.href = 'mailto:sumitg7@zohomail.in?subject=Free SEO Audit Request';
+                window.open('https://wa.me/919137021658?text=Hi%20Sumit%2C%20I%20am%20interested%20in%20a%20Free%20SEO%20Audit%20for%20my%20website!', '_blank');
               }}
             >
-              Free SEO Audit
+              Free SEO Audit (WhatsApp)
             </Button>
             <Button 
               variant="default" 
@@ -146,11 +146,10 @@ const Header = () => {
               iconPosition="right"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta"
               onClick={() => {
-                const form = document.querySelector('#footer-contact-form');
-                if (form) form.scrollIntoView({ behavior: 'smooth' });
+                window.open('https://wa.me/919137021658?text=Hi%20Sumit%2C%20I%20want%20to%20start%20a%20project%20with%20you!', '_blank');
               }}
             >
-              Start Project
+              Start Project (WhatsApp)
             </Button>
           </div>
 
