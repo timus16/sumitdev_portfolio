@@ -102,7 +102,7 @@ const InteractiveHomepage = () => {
             </motion.div>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-10 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 text-left">
             {/* Brand & Mission */}
             <div className="col-span-2 flex flex-col justify-between">
               <div className="flex items-center space-x-3 mb-4">
@@ -140,7 +140,7 @@ const InteractiveHomepage = () => {
             {/* Contact Form */}
             <div className="md:col-span-1" id="footer-contact-form">
               <h4 className="font-bold font-headline mb-4">Contact</h4>
-              <form action="https://formspree.io/f/xwkgyyqg" method="POST" className="space-y-4 bg-card/90 rounded-xl shadow-floating p-6" onSubmit={(e) => {
+              <form action="https://formspree.io/f/xwkgyyqg" method="POST" className="space-y-4 bg-card/90 rounded-xl shadow-floating p-4 sm:p-6" onSubmit={(e) => {
                 e.preventDefault();
                 const form = e.target;
                 const name = form.name.value;

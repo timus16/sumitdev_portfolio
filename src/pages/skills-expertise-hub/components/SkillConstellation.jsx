@@ -91,7 +91,7 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
   };
 
   return (
-  <div className="relative w-full h-96 bg-gradient-to-br from-[#FFD700]/20 via-primary/10 to-secondary/10 rounded-2xl overflow-hidden border-4 border-[#FFD700] shadow-[0_8px_32px_rgba(255,215,0,0.15)]">
+  <div className="relative w-full h-80 sm:h-96 lg:h-[32rem] bg-gradient-to-br from-[#FFD700]/20 via-primary/10 to-secondary/10 rounded-2xl overflow-hidden border-4 border-[#FFD700] shadow-[0_8px_32px_rgba(255,215,0,0.15)]">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-20">
         <svg width="100%" height="100%" className="text-primary/20">

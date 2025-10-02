@@ -152,7 +152,7 @@ const ServicesCards = () => {
             >
               {/* Card Container */}
               <motion.div
-                className="relative bg-card border border-border rounded-xl p-7 h-full shadow-subtle overflow-hidden cursor-pointer transition-all duration-150"
+                className="relative bg-card border border-border rounded-xl p-5 sm:p-7 h-full shadow-subtle overflow-hidden cursor-pointer transition-all duration-150"
                 whileHover={{ 
                   scale: 1.03,
                   boxShadow: '0 8px 32px rgba(34,211,238,0.10)',

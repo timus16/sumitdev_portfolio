@@ -93,7 +93,7 @@ const SkillsExpertiseHub = () => {
               
               <h1 className="text-4xl lg:text-6xl font-bold font-headline text-text-primary mb-6">
                 Skills & Expertise
-                <span className="block text-gradient-primary">Constellation</span>
+                <span className="block text-gradient-primary text-2xl sm:text-4xl lg:text-6xl">Constellation</span>
               </h1>
               
               <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
@@ -103,7 +103,7 @@ const SkillsExpertiseHub = () => {
               </p>
 
               {/* Skill Metrics */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
                 {skillMetrics.map((metric, index) => (
                   <motion.div
                     key={metric.label}

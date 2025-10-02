@@ -186,7 +186,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content Section */}
           <motion.div
             className="text-center lg:text-left"
@@ -207,7 +207,7 @@ const HeroSection = () => {
 
             {/* Interactive Main Heading with shimmer */}
             <motion.h1
-              className="text-4xl lg:text-6xl xl:text-7xl font-bold font-headline mb-6 min-h-[4.5rem] relative"
+              className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold font-headline mb-6 min-h-[3.5rem] sm:min-h-[4.5rem] relative"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -227,7 +227,7 @@ const HeroSection = () => {
 
             {/* Animated Description */}
             <motion.p
-              className="text-lg lg:text-xl text-text-secondary mb-8 max-w-2xl"
+              className="text-base sm:text-lg lg:text-xl text-text-secondary mb-8 max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -241,7 +241,7 @@ const HeroSection = () => {
 
             {/* Animated CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-10 sm:mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -275,7 +275,7 @@ const HeroSection = () => {
 
             {/* Metrics */}
             <motion.div
-              className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
