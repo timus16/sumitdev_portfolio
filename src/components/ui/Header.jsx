@@ -81,7 +81,7 @@ const Header = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-fixed transition-all duration-normal ${
           isScrolled
-            ? 'bg-background/95 backdrop-blur-brand shadow-subtle border-b border-border'
+            ? 'bg-white/90 backdrop-blur-lg shadow-subtle border-b border-border'
             : 'bg-transparent'
         }`}
         role="banner"
@@ -114,7 +114,7 @@ const Header = () => {
               {navigationItems.map((item) => (
                 item.dropdown ? (
                   <div key={item.name} className="relative group">
-                    <button className="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium font-body text-text-primary hover:bg-surface hover:text-primary transition-all duration-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-accent group/nav" aria-haspopup="true" aria-expanded="false">
+                    <button className="flex items-center space-x-2 px-4 py-2 rounded-full font-medium font-body text-muted-foreground hover:bg-accent/10 hover:text-primary transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent group/nav" aria-haspopup="true" aria-expanded="false">
                       <Icon name={item.icon} size={18} />
                       <span className="relative after:content-[''] after:block after:h-[2px] after:bg-accent after:scale-x-0 group-hover/nav:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left">{item.name}</span>
                       <Icon name="ChevronDown" size={16} className="group-hover:rotate-180 transition-transform duration-normal" />

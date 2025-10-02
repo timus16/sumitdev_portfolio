@@ -69,33 +69,33 @@ const InteractiveHomepage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="relative bg-gradient-to-t from-primary to-primary/90 text-primary-foreground pt-16 pb-8 mt-20 border-t border-primary/20">
+  <footer className="relative bg-surface text-foreground pt-20 pb-10 mt-20 border-t border-border">
         <div className="container mx-auto px-4 lg:px-6">
           {/* Animated CTA Banner */}
           <div className="flex flex-col items-center justify-center mb-12">
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
+              initial={{ scale: 0.98, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ type: 'spring', stiffness: 200, damping: 18 }}
-              className="bg-accent/90 text-accent-foreground rounded-2xl px-8 py-6 shadow-lg flex flex-col items-center gap-3 w-full max-w-2xl"
+              transition={{ type: 'spring', stiffness: 180, damping: 20 }}
+              className="bg-card rounded-xl px-10 py-8 shadow-subtle flex flex-col items-center gap-4 w-full max-w-xl border border-border"
             >
-              <h2 className="text-2xl md:text-3xl font-bold font-headline mb-1 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold font-headline mb-2 text-center">
                 Ready to grow your business or launch your next project?
               </h2>
-              <p className="text-accent-foreground/90 text-base md:text-lg text-center mb-2">
-                Let’s build something remarkable together. Get a free consultation or just say hello!
+              <p className="text-muted-foreground text-base md:text-lg text-center mb-2">
+                Let’s build something remarkable together.<br />Get a free consultation or just say hello!
               </p>
-              <div className="flex flex-wrap gap-4 justify-center mt-2">
-                <a href="#footer-contact-form" className="group inline-flex items-center px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow hover:bg-primary/80 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent">
-                  <Icon name="Mail" size={22} className="mr-2 group-hover:animate-bounce" />
+              <div className="flex flex-wrap gap-3 justify-center mt-2">
+                <a href="#footer-contact-form" className="inline-flex items-center px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-full shadow hover:bg-primary/90 transition-all duration-150">
+                  <Icon name="Mail" size={20} className="mr-2" />
                   Contact Me
                 </a>
-                <a href="tel:+919137021658" className="group inline-flex items-center px-6 py-2 bg-secondary text-secondary-foreground font-semibold rounded-lg shadow hover:bg-secondary/80 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent">
-                  <Icon name="Phone" size={22} className="mr-2 group-hover:animate-pulse" />
+                <a href="tel:+919137021658" className="inline-flex items-center px-6 py-2 bg-accent text-accent-foreground font-semibold rounded-full shadow hover:bg-accent/90 transition-all duration-150">
+                  <Icon name="Phone" size={20} className="mr-2" />
                   Call Now
                 </a>
-                <a href="https://www.linkedin.com/in/sumitkumar-gupta-react/" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center px-6 py-2 bg-[#0077b5] text-white font-semibold rounded-lg shadow hover:bg-[#005983] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent">
-                  <Icon name="Linkedin" size={22} className="mr-2 group-hover:animate-spin" />
+                <a href="https://www.linkedin.com/in/sumitkumar-gupta-react/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-2 bg-secondary text-secondary-foreground font-semibold rounded-full shadow hover:bg-secondary/90 transition-all duration-150">
+                  <Icon name="Linkedin" size={20} className="mr-2" />
                   LinkedIn
                 </a>
               </div>

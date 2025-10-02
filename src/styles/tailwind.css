@@ -10,34 +10,34 @@
 @layer base {
   :root {
     /* Core System Colors */
-    --color-background: #FAFBFC; /* gray-50 */
-    --color-foreground: #212529; /* gray-900 */
-    --color-border: #E9ECEF; /* gray-200 */
-    --color-input: #FFFFFF; /* white */
-    --color-ring: #00D9FF; /* cyan-400 */
-    
-    /* Card & Surface Colors */
-    --color-card: #FFFFFF; /* white */
-    --color-card-foreground: #212529; /* gray-900 */
-    --color-popover: #FFFFFF; /* white */
-    --color-popover-foreground: #212529; /* gray-900 */
-    --color-surface: #F1F3F5; /* gray-100 */
-    
-    /* Muted Colors */
-    --color-muted: #F8F9FA; /* gray-50 */
-    --color-muted-foreground: #6C757D; /* gray-500 */
-    
-    /* Brand Primary Colors */
-    --color-primary: #0A1628; /* slate-900 */
-    --color-primary-foreground: #FFFFFF; /* white */
-    
-    /* Brand Secondary Colors */
-    --color-secondary: #00D9FF; /* cyan-400 */
-    --color-secondary-foreground: #0A1628; /* slate-900 */
-    
-    /* Accent Colors */
-    --color-accent: #FFB800; /* amber-400 */
-    --color-accent-foreground: #0A1628; /* slate-900 */
+  --color-background: #F7FAFC; /* fresh off-white */
+  --color-foreground: #1A202C; /* modern dark gray */
+  --color-border: #E2E8F0; /* light gray */
+  --color-input: #FFFFFF; /* white */
+  --color-ring: #38BDF8; /* vibrant blue */
+
+  /* Card & Surface Colors */
+  --color-card: #FFFFFF; /* white */
+  --color-card-foreground: #1A202C; /* modern dark gray */
+  --color-popover: #FFFFFF; /* white */
+  --color-popover-foreground: #1A202C; /* modern dark gray */
+  --color-surface: #F3F6FB; /* ultra-light blue */
+
+  /* Muted Colors */
+  --color-muted: #F5F7FA; /* very light gray */
+  --color-muted-foreground: #718096; /* muted blue-gray */
+
+  /* Brand Primary Colors */
+  --color-primary: #2563EB; /* modern blue */
+  --color-primary-foreground: #FFFFFF; /* white */
+
+  /* Brand Secondary Colors */
+  --color-secondary: #38BDF8; /* vibrant blue */
+  --color-secondary-foreground: #1A202C; /* modern dark gray */
+
+  /* Accent Colors */
+  --color-accent: #22D3EE; /* fresh cyan */
+  --color-accent-foreground: #1A202C; /* modern dark gray */
     
     /* State Colors */
     --color-destructive: #DC3545; /* red-600 */

@@ -91,28 +91,28 @@ const HeroSection = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#FFD700] overflow-hidden flex items-center"
+      className="relative min-h-screen bg-background overflow-hidden flex items-center"
     >
       {/* Mouse-following highlight */}
-      <div className="absolute z-10 w-80 h-80 bg-gradient-to-br from-[#FFD700]/60 to-accent rounded-full blur-3xl transition-all duration-300" style={highlightStyle}></div>
+  <div className="absolute z-10 w-80 h-80 bg-gradient-to-br from-accent/40 to-primary/10 rounded-full blur-3xl transition-all duration-300" style={highlightStyle}></div>
       {/* Animated Sparkles */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        {[...Array(12)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-[#FFD700] rounded-full shadow-lg"
+            className="absolute w-2 h-2 bg-accent rounded-full shadow-lg"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              opacity: 0.7
+              opacity: 0.6
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0.7, 1, 0.7],
-              scale: [1, 1.3, 1]
+              y: [0, -20, 0],
+              opacity: [0.6, 1, 0.6],
+              scale: [1, 1.2, 1]
             }}
             transition={{
-              duration: 4 + Math.random() * 2,
+              duration: 3 + Math.random() * 2,
               repeat: Infinity,
               delay: Math.random() * 2
             }}

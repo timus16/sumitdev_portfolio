@@ -100,7 +100,7 @@ const ServicesCards = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-surface relative overflow-hidden">
+  <section className="py-20 bg-background relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
@@ -110,29 +110,29 @@ const ServicesCards = () => {
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-14"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <motion.div
-            className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
+            className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-2 mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <Icon name="Briefcase" size={16} className="text-primary" />
-            <span className="text-sm font-medium text-primary">Core Services</span>
+            <Icon name="Briefcase" size={16} className="text-accent" />
+            <span className="text-sm font-medium text-accent">Core Services</span>
           </motion.div>
 
-          <h2 className="text-3xl lg:text-5xl font-bold font-headline text-primary mb-4">
+          <h2 className="text-3xl lg:text-5xl font-bold font-headline text-primary mb-3">
             Specialized Solutions for
-            <span className="text-gradient-primary block">Digital Growth</span>
+            <span className="block text-accent font-bold">Digital Growth</span>
           </h2>
           
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Six core service areas where technical expertise meets measurable business results, including e-commerce and mobile app development for iOS and Android.
           </p>
         </motion.div>
@@ -152,11 +152,10 @@ const ServicesCards = () => {
             >
               {/* Card Container */}
               <motion.div
-                className="relative bg-card border border-border rounded-2xl p-8 h-full shadow-floating overflow-hidden cursor-pointer"
+                className="relative bg-card border border-border rounded-xl p-7 h-full shadow-subtle overflow-hidden cursor-pointer transition-all duration-150"
                 whileHover={{ 
-                  scale: 1.02,
-                  rotateY: 5,
-                  rotateX: 5
+                  scale: 1.03,
+                  boxShadow: '0 8px 32px rgba(34,211,238,0.10)',
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 style={{
