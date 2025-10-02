@@ -35,6 +35,9 @@ export default function FlutterVsNativePerformance() {
         <p className="lead">
           With Flutter 4.0's recent release and significant improvements in native development tools, the performance gap between cross-platform and native solutions continues to narrow. This detailed analysis, based on real-world projects and comprehensive benchmarking, helps you make an informed choice for your next mobile project.
         </p>
+        <p className="lead text-accent">
+          <b>Modern no-code platforms like <span className='text-primary'>Bubble.io</span> and <span className='text-secondary'>FlutterFlow</span> are also transforming how apps are built, enabling rapid prototyping and scalable solutions for startups and enterprises.</b>
+        </p>
 
         <h2>Benchmarking Methodology</h2>
         <p>

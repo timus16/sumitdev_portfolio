@@ -119,7 +119,7 @@ const InteractiveHomepage = () => {
               </p>
               <div className="flex space-x-3 mt-2">
                 <a href="https://www.linkedin.com/in/sumitkumar-gupta-react/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Linkedin" size={22} /></a>
-                <a href="mailto:sumitg7@zohomail.in" aria-label="Email" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Mail" size={22} /></a>
+                <a href="mailto:sumitg777@outlook.com" aria-label="Email" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Mail" size={22} /></a>
                 <a href="tel:+919137021658" aria-label="Phone" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Phone" size={22} /></a>
                 <a href="https://github.com/timus16" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-accent focus:text-accent transition-transform duration-200 hover:scale-110 active:scale-95"><Icon name="Github" size={22} /></a>
               </div>
@@ -160,7 +160,7 @@ const InteractiveHomepage = () => {
                 });
               }}>
                 <input type="hidden" name="_subject" value="Portfolio Contact Form Submission" />
-                <input type="hidden" name="to" value="sumitg7@zohomail.in" />
+                <input type="hidden" name="to" value="sumitg777@outlook.com" />
                 <div>
                   <label className="block text-xs font-medium mb-1 text-primary" htmlFor="name">Full Name</label>
                   <input required type="text" id="name" name="name" autoComplete="name" placeholder="Your Name" className="w-full px-3 py-2 border border-border rounded focus:outline-none focus:ring-2 focus:ring-accent bg-background/80 text-sm" />

@@ -35,6 +35,9 @@ export default function ReactNativeAppCaseStudy() {
         <p className="lead">
           When a Mumbai-based fintech startup approached us to build their consumer banking app in React Native, they had three main requirements: native-like performance, cross-platform consistency, and rapid development. Here's how we delivered a 4.8⭐-rated app with 98% user retention while maintaining a single codebase.
         </p>
+          <p className="lead text-accent">
+            <b>No-code platforms such as <span className='text-primary'>Bubble.io</span> and <span className='text-secondary'>FlutterFlow</span> are now viable options for building MVPs and internal tools, complementing traditional frameworks.</b>
+          </p>
 
         <h2>Project Overview & Challenges</h2>
         <ul>

@@ -62,6 +62,9 @@ export default function WordPressSEOCaseStudy() {
           <p className="lead text-lg mb-4">
             In early 2025, a Mumbai-based e-commerce client approached us with a <strong>WordPress</strong> site struggling to gain organic traction. Their traffic had plateaued, and conversions were dropping despite regular content updates. The challenge: break through the noise in a competitive market and achieve sustainable, measurable growth.
           </p>
+            <p className="lead text-accent">
+              <b>No-code platforms like <span className='text-primary'>Bubble.io</span> and <span className='text-secondary'>FlutterFlow</span> are now enabling WordPress users to build custom integrations and landing pages faster than ever.</b>
+            </p>
           <ul className="mb-4">
             <li><strong>+300% organic traffic</strong> in 4 months</li>
             <li><strong>Page speed</strong> improved from 5s to 1.8s (<a href="/blog/performance-optimization-guide" className="text-accent hover:underline">Web Performance Optimization Guide</a>)</li>

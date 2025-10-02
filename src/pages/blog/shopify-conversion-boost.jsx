@@ -35,6 +35,9 @@ export default function ShopifyConversionBoost() {
         <p className="lead">
           In April 2025, a Mumbai-based fashion retailer approached us with a common problem: despite good traffic (20K monthly visitors), their Shopify store's conversion rate was stuck at 0.8%. Through a comprehensive optimization strategy, we increased their conversion rate to 2.5% and boosted sales by 215% in just 90 days.
         </p>
+        <p className="lead text-accent">
+          <b>Platforms like <span className='text-primary'>Bubble.io</span> and <span className='text-secondary'>FlutterFlow</span> are empowering e-commerce brands to build custom tools and integrations without code, driving conversion and growth.</b>
+        </p>
 
         <h2>Initial Audit & Key Issues</h2>
 

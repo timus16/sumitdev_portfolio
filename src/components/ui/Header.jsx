@@ -9,9 +9,10 @@ const Header = () => {
   const location = useLocation();
 
   const navigationItems = [
-    { name: 'Home', path: '/3d-interactive-homepage', icon: 'Home' },
-    { name: 'Experience', path: '/experience-journey-timeline', icon: 'Clock' },
-    { name: 'Skills', path: '/skills-expertise-hub', icon: 'Code' },
+  { name: 'Home', path: '/3d-interactive-homepage', icon: 'Home' },
+  { name: 'Experience', path: '/experience-journey-timeline', icon: 'Clock' },
+  { name: 'Skills', path: '/skills-expertise-hub', icon: 'Code' },
+  { name: 'No-Code Platforms', path: '/skills-expertise-hub#nocode', icon: 'Zap' },
     {
       name: 'Portfolio',
       icon: 'Briefcase',

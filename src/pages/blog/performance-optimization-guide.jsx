@@ -54,6 +54,9 @@ export default function PerformanceOptimizationGuide() {
       </Helmet>
       <Header />
       <article className="prose mx-auto py-12">
+        <p className="lead text-accent">
+          <b>No-code platforms like <span className='text-primary'>Bubble.io</span> and <span className='text-secondary'>FlutterFlow</span> are now part of the modern optimization toolkit, allowing businesses to launch and iterate faster than ever.</b>
+        </p>
         <img
           src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80"
           alt="AI generated: Futuristic website performance dashboard"

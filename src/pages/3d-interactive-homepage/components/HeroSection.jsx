@@ -57,11 +57,11 @@ const HeroSection = () => {
 
   const floatingElements = [
     { id: 1, code: 'React.js', x: 10, y: 20, delay: 0 },
-    { id: 2, code: 'SEO++', x: 85, y: 15, delay: 0.2 },
-    { id: 3, code: 'WordPress', x: 15, y: 80, delay: 0.4 },
-    { id: 4, code: 'Next.js', x: 80, y: 75, delay: 0.6 },
-    { id: 5, code: 'Analytics', x: 50, y: 10, delay: 0.8 },
-    { id: 6, code: 'Performance', x: 90, y: 45, delay: 1.0 }
+  { id: 2, code: 'SEO++', x: 85, y: 15, delay: 0.2 },
+  { id: 3, code: 'WordPress', x: 15, y: 80, delay: 0.4 },
+  { id: 4, code: 'Next.js', x: 80, y: 75, delay: 0.6 },
+  { id: 5, code: 'Bubble.io', x: 50, y: 10, delay: 0.8 },
+  { id: 6, code: 'FlutterFlow', x: 90, y: 45, delay: 1.0 }
   ];
 
   const metrics = [
@@ -91,10 +91,34 @@ const HeroSection = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-screen bg-gradient-to-br from-background via-surface to-muted overflow-hidden flex items-center"
+      className="relative min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#FFD700] overflow-hidden flex items-center"
     >
       {/* Mouse-following highlight */}
-      <div className="absolute z-10 w-80 h-80 bg-accent rounded-full blur-3xl transition-all duration-300" style={highlightStyle}></div>
+      <div className="absolute z-10 w-80 h-80 bg-gradient-to-br from-[#FFD700]/60 to-accent rounded-full blur-3xl transition-all duration-300" style={highlightStyle}></div>
+      {/* Animated Sparkles */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-[#FFD700] rounded-full shadow-lg"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              opacity: 0.7
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.7, 1, 0.7],
+              scale: [1, 1.3, 1]
+            }}
+            transition={{
+              duration: 4 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2
+            }}
+          />
+        ))}
+      </div>
 
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-20">
@@ -107,7 +131,7 @@ const HeroSection = () => {
         ></div>
       </div>
 
-      {/* Floating Code Elements */}
+      {/* Floating Code Elements - luxury style */}
       {floatingElements.map((element) => (
         <motion.div
           key={element.id}
@@ -119,8 +143,8 @@ const HeroSection = () => {
           }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ 
-            opacity: isVisible ? 0.7 : 0, 
-            scale: isVisible ? 1 : 0,
+            opacity: isVisible ? 0.85 : 0, 
+            scale: isVisible ? 1.08 : 0,
             rotate: [0, 360]
           }}
           transition={{ 
@@ -129,8 +153,8 @@ const HeroSection = () => {
             rotate: { duration: 20, repeat: Infinity, ease: "linear" }
           }}
         >
-          <div className="bg-card/80 backdrop-blur-sm border border-secondary/30 rounded-lg px-3 py-2 shadow-floating">
-            <code className="text-sm font-mono text-secondary font-medium">
+          <div className="bg-gradient-to-br from-[#FFD700]/80 via-card to-accent border-2 border-[#FFD700] rounded-xl px-4 py-2 shadow-[0_0_32px_8px_rgba(255,215,0,0.15)]">
+            <code className="text-sm font-mono text-[#FFD700] font-bold drop-shadow">
               {element.code}
             </code>
           </div>
@@ -170,25 +194,35 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Badge */}
+            {/* Luxury Badge */}
             <motion.div
-              className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mb-6"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#FFD700]/80 to-accent/40 border border-[#FFD700] rounded-full px-6 py-3 mb-6 shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-accent">Available for Projects</span>
+              <Icon name="Sparkles" size={20} className="text-[#FFD700] animate-pulse" />
+              <span className="text-base font-bold text-[#FFD700] drop-shadow">Luxury Web Experiences</span>
             </motion.div>
 
-            {/* Interactive Main Heading */}
+            {/* Interactive Main Heading with shimmer */}
             <motion.h1
-              className="text-4xl lg:text-6xl xl:text-7xl font-bold font-headline mb-6 min-h-[4.5rem]"
+              className="text-4xl lg:text-6xl xl:text-7xl font-bold font-headline mb-6 min-h-[4.5rem] relative"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <span className="text-gradient-primary block">{typewriterText}<span className="animate-pulse">|</span></span>
+              <span className="block bg-gradient-to-r from-[#FFD700] via-accent to-primary bg-clip-text text-transparent animate-shimmer">{typewriterText}<span className="animate-pulse">|</span></span>
+              <style>{`
+                @keyframes shimmer {
+                  0% { background-position: -500px 0; }
+                  100% { background-position: 500px 0; }
+                }
+                .animate-shimmer {
+                  background-size: 200% 100%;
+                  animation: shimmer 2.5s linear infinite;
+                }
+              `}</style>
             </motion.h1>
 
             {/* Animated Description */}
@@ -199,9 +233,9 @@ const HeroSection = () => {
               transition={{ delay: 0.4 }}
             >
               <span className="inline-block animate-fade-in-up">
-                <b>Build, optimize, and scale</b> your digital presence with cutting-edge web and mobile solutions.<br/>
-                <span className="text-accent font-semibold">React Native</span>, <span className="text-primary font-semibold">Flutter</span>, <span className="text-secondary font-semibold">Shopify</span>, <span className="text-primary font-semibold">WordPress</span> &amp; more.<br/>
-                <span className="text-success font-semibold">Performance. UX. Results.</span>
+                <b>Crafting luxury digital experiences</b> for visionary brands.<br/>
+                <span className="text-[#FFD700] font-semibold">No-Code Platforms: Bubble.io, FlutterFlow</span>, <span className="text-accent font-semibold">React Native</span>, <span className="text-primary font-semibold">Flutter</span>, <span className="text-secondary font-semibold">Shopify</span>, <span className="text-primary font-semibold">WordPress</span> &amp; more.<br/>
+                <span className="text-success font-semibold">Performance. UX. Results. Exclusivity.</span>
               </span>
             </motion.p>
 
@@ -282,19 +316,19 @@ const HeroSection = () => {
             <div className="relative">
               {/* Main Profile Card */}
               <motion.div
-                className="relative bg-card border border-border rounded-2xl p-8 shadow-dramatic overflow-hidden"
+                className="relative bg-gradient-to-br from-[#FFD700]/30 via-card to-surface border-4 border-[#FFD700] rounded-2xl p-8 shadow-dramatic overflow-hidden"
                 style={{
                   transform: `perspective(1000px) rotateY(${mousePosition.x * 10 - 5}deg) rotateX(${mousePosition.y * 10 - 5}deg)`
                 }}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.04 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-accent/5"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700]/10 to-accent/10"></div>
 
-                {/* Personal Brand Name */}
+                {/* Personal Brand Name with shimmer */}
                 <div className="relative z-20 flex flex-col items-center justify-center mb-6">
-                  <span className="text-3xl lg:text-4xl font-bold font-headline text-primary drop-shadow animate-fade-in-up">Sumit Gupta</span>
+                  <span className="text-3xl lg:text-4xl font-bold font-headline text-[#FFD700] drop-shadow animate-shimmer">Sumit Gupta</span>
                 </div>
 
             {/* Experience Highlight */}

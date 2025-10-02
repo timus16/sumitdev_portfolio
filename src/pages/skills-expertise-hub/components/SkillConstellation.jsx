@@ -22,6 +22,16 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
       ]
     },
     {
+      id: 'nocode',
+      name: 'No-Code Platforms',
+      color: 'from-[#8ecae6] to-[#FFD700]',
+      position: { x: 50, y: 50 },
+      skills: [
+        { id: 'bubbleio', name: 'Bubble.io', level: 80, years: 2, icon: 'Zap' },
+        { id: 'flutterflow', name: 'FlutterFlow', level: 75, years: 1, icon: 'BarChart3' }
+      ]
+    },
+    {
       id: 'backend',
       name: 'Backend Systems',
       color: 'from-primary to-secondary',
@@ -81,7 +91,7 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
   };
 
   return (
-    <div className="relative w-full h-96 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl overflow-hidden border border-border">
+  <div className="relative w-full h-96 bg-gradient-to-br from-[#FFD700]/20 via-primary/10 to-secondary/10 rounded-2xl overflow-hidden border-4 border-[#FFD700] shadow-[0_8px_32px_rgba(255,215,0,0.15)]">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-20">
         <svg width="100%" height="100%" className="text-primary/20">
@@ -100,7 +110,7 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
           <div key={category.id} className="absolute">
             {/* Category Core */}
             <motion.div
-              className={`absolute w-16 h-16 rounded-full bg-gradient-to-br ${category.color} shadow-floating flex items-center justify-center cursor-pointer`}
+              className={`absolute w-16 h-16 rounded-full bg-gradient-to-br ${category.color} shadow-[0_0_32px_8px_rgba(255,215,0,0.25)] border-2 border-[#FFD700] flex items-center justify-center cursor-pointer`}
               style={{
                 left: `${category.position.x}%`,
                 top: `${category.position.y}%`,
