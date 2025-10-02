@@ -154,18 +154,18 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
               return (
                 <motion.div
                   key={skill.id}
-                  className={`absolute w-8 h-8 rounded-full cursor-pointer flex items-center justify-center transition-all duration-normal ${
-                    isSelected ? 'bg-accent shadow-glow' : 'bg-card border-2 border-border hover:border-secondary'
+                  className={`absolute w-8 h-8 rounded-full cursor-pointer flex items-center justify-center transition-all duration-200 ${
+                    isSelected ? 'bg-accent shadow-[0_0_24px_8px_rgba(34,211,238,0.25)]' : 'bg-card border-2 border-border hover:border-secondary'
                   }`}
                   style={{
                     left: `${position.x}%`,
                     top: `${position.y}%`,
                     transform: 'translate(-50%, -50%)'
                   }}
-                  whileHover={{ scale: 1.2 }}
+                  whileHover={{ scale: 1.25, boxShadow: '0 0 32px 8px rgba(34,211,238,0.25)' }}
                   animate={{ 
-                    scale: isSelected ? 1.1 : 1,
-                    boxShadow: isHovered ? '0 0 20px rgba(0, 217, 255, 0.3)' : 'none'
+                    scale: isSelected ? 1.15 : 1,
+                    boxShadow: isHovered ? '0 0 32px 8px rgba(34,211,238,0.25)' : 'none'
                   }}
                   onClick={() => onSkillSelect(skill)}
                   onHoverStart={() => setHoveredSkill(skill.id)}
@@ -173,7 +173,7 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
                 >
                   <Icon 
                     name={skill.icon} 
-                    size={16} 
+                    size={18} 
                     className={isSelected ? 'text-accent-foreground' : 'text-text-secondary'} 
                   />
                 </motion.div>
@@ -186,7 +186,6 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
                 const position = getSkillPosition(categoryIndex, skillIndex, category);
                 const centerX = category.position.x;
                 const centerY = category.position.y;
-                
                 return (
                   <motion.line
                     key={`line-${skill.id}`}
@@ -194,18 +193,24 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
                     y1={`${centerY}%`}
                     x2={`${position.x}%`}
                     y2={`${position.y}%`}
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    className="text-border"
+                    stroke="url(#glow)"
+                    strokeWidth="2"
+                    className="text-accent"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ 
                       pathLength: 1, 
-                      opacity: hoveredSkill === category.id || hoveredSkill === skill.id ? 0.6 : 0.2 
+                      opacity: hoveredSkill === category.id || hoveredSkill === skill.id ? 0.7 : 0.2 
                     }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.7 }}
                   />
                 );
               })}
+              <defs>
+                <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#22D3EE" stopOpacity="0.7" />
+                  <stop offset="100%" stopColor="#FFD700" stopOpacity="0.7" />
+                </linearGradient>
+              </defs>
             </svg>
           </div>
         ))}

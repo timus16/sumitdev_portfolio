@@ -120,7 +120,28 @@ const SkillsExpertiseHub = () => {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+            {/* No-Code Platform Navigation */}
+            <div className="flex flex-wrap gap-4 justify-center mt-8">
+              <a
+                href="/skills-expertise-hub/bubble-io"
+                className="px-4 py-2 bg-accent text-white rounded-lg font-semibold shadow hover:bg-primary transition"
+              >
+                Bubble.io
+              </a>
+              <a
+                href="/skills-expertise-hub/flutterflow"
+                className="px-4 py-2 bg-primary text-white rounded-lg font-semibold shadow hover:bg-accent transition"
+              >
+                FlutterFlow
+              </a>
+              <a
+                href="/skills-expertise-hub/trending-no-code-tools"
+                className="px-4 py-2 bg-secondary text-white rounded-lg font-semibold shadow hover:bg-accent transition"
+              >
+                Trending No-Code Tools
+              </a>
+            </div>
+          </motion.div>
           </div>
         </section>
 
