@@ -94,25 +94,25 @@ const HeroSection = () => {
       className="relative min-h-screen bg-background overflow-hidden flex items-center"
     >
       {/* Mouse-following highlight */}
-  <div className="absolute z-10 w-80 h-80 bg-gradient-to-br from-accent/40 to-primary/10 rounded-full blur-3xl transition-all duration-300" style={highlightStyle}></div>
-      {/* Animated Sparkles */}
+  <div className="absolute z-10 w-72 h-72 bg-gradient-to-br from-electric-cyan/30 to-warm-gold/10 rounded-full blur-3xl transition-all duration-300" style={highlightStyle}></div>
+      {/* Animated Sparkles (subtle) */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-accent rounded-full shadow-lg"
+            className="absolute w-1.5 h-1.5 bg-electric-cyan/80 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              opacity: 0.6
+              opacity: 0.45
             }}
             animate={{
-              y: [0, -20, 0],
-              opacity: [0.6, 1, 0.6],
-              scale: [1, 1.2, 1]
+              y: [0, -12, 0],
+              opacity: [0.45, 0.9, 0.45],
+              scale: [1, 1.08, 1]
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 3 + Math.random() * 1.5,
               repeat: Infinity,
               delay: Math.random() * 2
             }}
@@ -131,8 +131,8 @@ const HeroSection = () => {
         ></div>
       </div>
 
-      {/* Floating Code Elements - luxury style */}
-      {floatingElements.map((element) => (
+      {/* Floating Code Elements - simplified */}
+      {floatingElements.slice(0,4).map((element) => (
         <motion.div
           key={element.id}
           className="absolute hidden lg:block"
@@ -145,16 +145,16 @@ const HeroSection = () => {
           animate={{ 
             opacity: isVisible ? 0.85 : 0, 
             scale: isVisible ? 1.08 : 0,
-            rotate: [0, 360]
+            rotate: [0, 0]
           }}
           transition={{ 
             delay: element.delay,
             duration: 0.8,
-            rotate: { duration: 20, repeat: Infinity, ease: "linear" }
+            // keep motion subtle
           }}
         >
-          <div className="bg-gradient-to-br from-[#FFD700]/80 via-card to-accent border-2 border-[#FFD700] rounded-xl px-4 py-2 shadow-[0_0_32px_8px_rgba(255,215,0,0.15)]">
-            <code className="text-sm font-mono text-[#FFD700] font-bold drop-shadow">
+          <div className="bg-card/80 border-2 border-warm-gold/40 rounded-xl px-4 py-2 shadow-subtle backdrop-blur-sm">
+            <code className="text-sm font-mono text-warm-gold font-semibold">
               {element.code}
             </code>
           </div>
@@ -163,7 +163,7 @@ const HeroSection = () => {
 
       {/* Particle System */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-secondary rounded-full"
@@ -172,12 +172,12 @@ const HeroSection = () => {
               top: `${Math.random() * 100}%`
             }}
             animate={{
-              y: [0, -100, 0],
-              opacity: [0, 1, 0],
+              y: [0, -60, 0],
+              opacity: [0, 0.8, 0],
               scale: [0, 1, 0]
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 3 + Math.random() * 1.5,
               repeat: Infinity,
               delay: Math.random() * 2
             }}
@@ -196,13 +196,13 @@ const HeroSection = () => {
           >
             {/* Luxury Badge */}
             <motion.div
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#FFD700]/80 to-accent/40 border border-[#FFD700] rounded-full px-6 py-3 mb-6 shadow-lg"
+              className="inline-flex items-center space-x-2 bg-card/80 border border-warm-gold/30 rounded-full px-6 py-3 mb-6 shadow-subtle"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <Icon name="Sparkles" size={20} className="text-[#FFD700] animate-pulse" />
-              <span className="text-base font-bold text-[#FFD700] drop-shadow">Luxury Web Experiences</span>
+              <Icon name="Sparkles" size={20} className="text-warm-gold animate-pulse" />
+              <span className="text-base font-bold text-warm-gold">Luxury Web Experiences</span>
             </motion.div>
 
             {/* Interactive Main Heading with shimmer */}
@@ -212,7 +212,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <span className="block bg-gradient-to-r from-[#FFD700] via-accent to-primary bg-clip-text text-transparent animate-shimmer">{typewriterText}<span className="animate-pulse">|</span></span>
+              <span className="block bg-gradient-to-r from-warm-gold via-accent to-primary bg-clip-text text-transparent animate-shimmer">{typewriterText}<span className="animate-pulse">|</span></span>
               <style>{`
                 @keyframes shimmer {
                   0% { background-position: -500px 0; }
@@ -227,14 +227,14 @@ const HeroSection = () => {
 
             {/* Animated Description */}
             <motion.p
-              className="text-base sm:text-lg lg:text-xl text-text-secondary mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-base sm:text-lg lg:text-xl text-text-primary mb-8 max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
               <span className="inline-block animate-fade-in-up">
                 <b>Crafting luxury digital experiences</b> for visionary brands.<br/>
-                <span className="text-[#FFD700] font-semibold">No-Code Platforms: Bubble.io, FlutterFlow</span>, <span className="text-accent font-semibold">React Native</span>, <span className="text-primary font-semibold">Flutter</span>, <span className="text-secondary font-semibold">Shopify</span>, <span className="text-primary font-semibold">WordPress</span> &amp; more.<br/>
+                <span className="text-warm-gold font-semibold">No-Code Platforms: Bubble.io, FlutterFlow</span>, <span className="text-accent font-semibold">React Native</span>, <span className="text-primary font-semibold">Flutter</span>, <span className="text-secondary font-semibold">Shopify</span>, <span className="text-primary font-semibold">WordPress</span> &amp; more.<br/>
                 <span className="text-success font-semibold">Performance. UX. Results. Exclusivity.</span>
               </span>
             </motion.p>
@@ -251,7 +251,7 @@ const HeroSection = () => {
                 size="lg"
                 iconName="ArrowRight"
                 iconPosition="right"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta shadow-floating hover:shadow-dramatic transition-all duration-normal animate-bounce"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-cta shadow-subtle transition-all duration-normal"
                 onClick={() => {
                   const form = document.querySelector('#footer-contact-form');
                   if (form) form.scrollIntoView({ behavior: 'smooth' });
@@ -293,7 +293,7 @@ const HeroSection = () => {
                       size={20} 
                       className="text-secondary mr-2" 
                     />
-                    <span className="text-2xl lg:text-3xl font-bold text-primary">
+                    <span className="text-2xl lg:text-3xl font-bold text-text-primary">
                       {metric.value}
                     </span>
                   </div>
@@ -316,7 +316,7 @@ const HeroSection = () => {
             <div className="relative">
               {/* Main Profile Card */}
               <motion.div
-                className="relative bg-gradient-to-br from-[#FFD700]/30 via-card to-surface border-4 border-[#FFD700] rounded-2xl p-8 shadow-dramatic overflow-hidden"
+                className="relative bg-gradient-to-br from-warm-gold/30 via-card to-surface border-4 border-warm-gold/40 rounded-2xl p-8 shadow-subtle overflow-hidden"
                 style={{
                   transform: `perspective(1000px) rotateY(${mousePosition.x * 10 - 5}deg) rotateX(${mousePosition.y * 10 - 5}deg)`
                 }}
@@ -324,16 +324,16 @@ const HeroSection = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700]/10 to-accent/10"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-warm-gold/10 to-accent/10"></div>
 
                 {/* Personal Brand Name with shimmer */}
                 <div className="relative z-20 flex flex-col items-center justify-center mb-6">
-                  <span className="text-3xl lg:text-4xl font-bold font-headline text-[#FFD700] drop-shadow animate-shimmer">Sumit Gupta</span>
+                  <span className="text-3xl lg:text-4xl font-bold font-headline text-warm-gold drop-shadow animate-shimmer">Sumit Gupta</span>
                 </div>
 
             {/* Experience Highlight */}
             <div className="relative z-10 flex flex-col items-center justify-center mb-4">
-              <div className="flex items-center bg-accent/20 px-4 py-2 rounded-full shadow-floating mb-2">
+              <div className="flex items-center bg-accent/20 px-4 py-2 rounded-full shadow-subtle mb-2">
                 <Icon name="Clock" size={20} className="text-accent mr-2" />
                 <span className="text-lg font-bold text-accent">5 Years Experience</span>
               </div>
