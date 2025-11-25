@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BubbleIO() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#22D3EE]/10 via-[#FFD700]/10 to-[#fff]/10 flex flex-col items-center justify-center p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#22D3EE]/10 via-warm-gold/10 to-[#fff]/10 flex flex-col items-center justify-center p-8">
       <h1 className="text-4xl font-extrabold text-accent mb-4">Bubble.io</h1>
       <p className="max-w-2xl text-lg text-text-secondary mb-8 text-center">
         Bubble.io is a leading no-code platform for building web applications visually. Drag, drop, and connect logic without writing code. Perfect for startups, agencies, and makers.

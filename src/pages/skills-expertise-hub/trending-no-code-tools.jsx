@@ -30,7 +30,7 @@ const tools = [
 
 export default function TrendingNoCodeTools() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FFD700]/10 via-[#22D3EE]/10 to-[#fff]/10 flex flex-col items-center justify-center p-8">
+    <div className="min-h-screen bg-gradient-to-br from-warm-gold/10 via-[#22D3EE]/10 to-[#fff]/10 flex flex-col items-center justify-center p-8">
       <h1 className="text-4xl font-extrabold text-secondary mb-4">Trending No-Code Tools</h1>
       <p className="max-w-2xl text-lg text-text-secondary mb-8 text-center">
         Explore the latest and most popular no-code platforms for building websites, apps, and automations without writing code.

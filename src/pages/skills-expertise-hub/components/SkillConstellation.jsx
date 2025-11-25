@@ -91,7 +91,7 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
   };
 
   return (
-  <div className="relative w-full h-80 sm:h-96 lg:h-[32rem] bg-gradient-to-br from-[#FFD700]/20 via-primary/10 to-secondary/10 rounded-2xl overflow-hidden border-4 border-[#FFD700] shadow-[0_8px_32px_rgba(255,215,0,0.15)]">
+  <div className="relative w-full h-80 sm:h-96 lg:h-[32rem] bg-gradient-to-br from-warm-gold/20 via-primary/10 to-secondary/10 rounded-2xl overflow-hidden border-4 border-warm-gold/40 shadow-subtle">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-20">
         <svg width="100%" height="100%" className="text-primary/20">
@@ -110,7 +110,7 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
           <div key={category.id} className="absolute">
             {/* Category Core */}
             <motion.div
-              className={`absolute w-16 h-16 rounded-full bg-gradient-to-br ${category.color} shadow-[0_0_32px_8px_rgba(255,215,0,0.25)] border-2 border-[#FFD700] flex items-center justify-center cursor-pointer`}
+              className={`absolute w-16 h-16 rounded-full bg-gradient-to-br ${category.color} shadow-subtle border-2 border-warm-gold/40 flex items-center justify-center cursor-pointer`}
               style={{
                 left: `${category.position.x}%`,
                 top: `${category.position.y}%`,
@@ -208,7 +208,7 @@ const SkillConstellation = ({ onSkillSelect, selectedSkill }) => {
               <defs>
                 <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0%" stopColor="#22D3EE" stopOpacity="0.7" />
-                  <stop offset="100%" stopColor="#FFD700" stopOpacity="0.7" />
+                  <stop offset="100%" stopColor="var(--color-warm-gold)" stopOpacity="0.7" />
                 </linearGradient>
               </defs>
             </svg>

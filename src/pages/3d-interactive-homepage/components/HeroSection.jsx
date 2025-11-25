@@ -91,12 +91,12 @@ const HeroSection = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-screen bg-background overflow-hidden flex items-center"
+      className="relative min-h-[80vh] md:min-h-screen bg-background overflow-hidden flex items-center"
     >
       {/* Mouse-following highlight */}
-  <div className="absolute z-10 w-72 h-72 bg-gradient-to-br from-electric-cyan/30 to-warm-gold/10 rounded-full blur-3xl transition-all duration-300" style={highlightStyle}></div>
-      {/* Animated Sparkles (subtle) */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+  <div className="absolute z-10 w-40 sm:w-56 md:w-72 h-40 sm:h-56 md:h-72 bg-gradient-to-br from-electric-cyan/30 to-warm-gold/10 rounded-full blur-3xl transition-all duration-300 pointer-events-none" style={highlightStyle}></div>
+      {/* Animated Sparkles (subtle) - hidden on small screens */}
+      <div className="hidden md:block absolute inset-0 pointer-events-none z-0">
         {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
@@ -154,7 +154,7 @@ const HeroSection = () => {
           }}
         >
           <div className="bg-card/80 border-2 border-warm-gold/40 rounded-xl px-4 py-2 shadow-subtle backdrop-blur-sm">
-            <code className="text-sm font-mono text-warm-gold font-semibold">
+            <code className="text-sm font-mono text-warm-gold font-semibold motion-reduce:animate-none">
               {element.code}
             </code>
           </div>
@@ -162,7 +162,7 @@ const HeroSection = () => {
       ))}
 
       {/* Particle System */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="hidden md:block absolute inset-0 overflow-hidden">
         {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
@@ -212,7 +212,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <span className="block bg-gradient-to-r from-warm-gold via-accent to-primary bg-clip-text text-transparent animate-shimmer">{typewriterText}<span className="animate-pulse">|</span></span>
+              <span className="block bg-gradient-to-r from-warm-gold via-accent to-primary bg-clip-text text-transparent motion-reduce:animate-none animate-shimmer">{typewriterText}<span className="motion-reduce:animate-none animate-pulse">|</span></span>
               <style>{`
                 @keyframes shimmer {
                   0% { background-position: -500px 0; }
@@ -327,9 +327,9 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-warm-gold/10 to-accent/10"></div>
 
                 {/* Personal Brand Name with shimmer */}
-                <div className="relative z-20 flex flex-col items-center justify-center mb-6">
-                  <span className="text-3xl lg:text-4xl font-bold font-headline text-warm-gold drop-shadow animate-shimmer">Sumit Gupta</span>
-                </div>
+                  <div className="relative z-20 flex flex-col items-center justify-center mb-6">
+                    <span className="text-2xl sm:text-3xl lg:text-4xl font-bold font-headline text-warm-gold drop-shadow motion-reduce:animate-none animate-shimmer">Sumit Gupta</span>
+                  </div>
 
             {/* Experience Highlight */}
             <div className="relative z-10 flex flex-col items-center justify-center mb-4">
