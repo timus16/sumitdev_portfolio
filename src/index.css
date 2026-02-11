@@ -13,8 +13,9 @@ html {
 }
 
 body {
-  @apply bg-dark-bg text-white font-poppins overflow-x-hidden;
+  @apply bg-dark-bg text-white font-sans overflow-x-hidden;
   background: linear-gradient(135deg, #0A0E27 0%, #141829 100%);
+  font-feature-settings: 'ss01' 1;
 }
 
 ::-webkit-scrollbar {

@@ -61,7 +61,7 @@ export default function Contact() {
             <h3 className="text-2xl font-bold neon-text-orange mb-6">Let's Connect!</h3>
             
             <motion.a
-              href="mailto:sumit@example.com"
+              href="mailto:timus1666@gmail.com"
               className="flex items-center gap-4 p-4 bg-dark-card border border-neon-orange/30 rounded-lg hover:border-neon-orange transition-all group"
               whileHover={{ x: 10 }}
             >
@@ -70,12 +70,12 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm text-gray-400">Email</p>
-                <p className="font-bold text-neon-orange">sumit@devmail.com</p>
+                <p className="font-bold text-neon-orange">timus1666@gmail.com</p>
               </div>
             </motion.a>
 
             <motion.a
-              href="tel:+1234567890"
+              href="tel:+919137021658"
               className="flex items-center gap-4 p-4 bg-dark-card border border-neon-green/30 rounded-lg hover:border-neon-green transition-all group"
               whileHover={{ x: 10 }}
             >
@@ -84,7 +84,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm text-gray-400">Phone</p>
-                <p className="font-bold text-neon-green">+1 (555) 123-4567</p>
+                <p className="font-bold text-neon-green">+91 9137 021 658</p>
               </div>
             </motion.a>
 
@@ -97,7 +97,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm text-gray-400">Location</p>
-                <p className="font-bold text-neon-orange">San Francisco, CA</p>
+                <p className="font-bold text-neon-orange">Mumbai, India</p>
               </div>
             </motion.div>
           </motion.div>
