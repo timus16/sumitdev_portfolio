@@ -69,10 +69,10 @@ export default function Skills() {
             <motion.div
               key={idx}
               variants={itemVariants}
-              className={`bg-dark-card border-2 p-8 rounded-lg transition-all hover:shadow-lg ${
+              className={`glass-lg border-2 p-8 rounded-lg transition-all hover:shadow-lg ${
                 category.color === 'orange'
-                  ? 'border-neon-orange/50 hover:border-neon-orange hover:shadow-neon-orange'
-                  : 'border-neon-green/50 hover:border-neon-green hover:shadow-neon-green'
+                  ? ' hover:border-neon-orange/80'
+                  : ' hover:border-neon-green/80'
               }`}
               style={{
                 boxShadow: `0 0 0px ${category.color === 'orange' ? '#FF6B351a' : '#00FF001a'}`

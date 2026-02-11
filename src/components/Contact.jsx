@@ -62,10 +62,10 @@ export default function Contact() {
             
             <motion.a
               href="mailto:timus1666@gmail.com"
-              className="flex items-center gap-4 p-4 bg-dark-card border border-neon-orange/30 rounded-lg hover:border-neon-orange transition-all group"
+              className="glass-orange flex items-center gap-4 p-4 rounded-lg hover:border-neon-orange/80 transition-all group"
               whileHover={{ x: 10 }}
             >
-              <div className="w-12 h-12 rounded-lg bg-neon-orange/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-lg glass-orange flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Mail className="text-neon-orange" size={24} />
               </div>
               <div>
@@ -76,10 +76,10 @@ export default function Contact() {
 
             <motion.a
               href="tel:+919137021658"
-              className="flex items-center gap-4 p-4 bg-dark-card border border-neon-green/30 rounded-lg hover:border-neon-green transition-all group"
+              className="glass-green flex items-center gap-4 p-4 rounded-lg hover:border-neon-green/80 transition-all group"
               whileHover={{ x: 10 }}
             >
-              <div className="w-12 h-12 rounded-lg bg-neon-green/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-lg glass-green flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Phone className="text-neon-green" size={24} />
               </div>
               <div>
@@ -89,10 +89,10 @@ export default function Contact() {
             </motion.a>
 
             <motion.div
-              className="flex items-center gap-4 p-4 bg-dark-card border border-neon-orange/30 rounded-lg"
+              className="glass-orange flex items-center gap-4 p-4 rounded-lg"
               whileHover={{ x: 10 }}
             >
-              <div className="w-12 h-12 rounded-lg bg-neon-orange/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg glass-orange flex items-center justify-center">
                 <MapPin className="text-neon-orange" size={24} />
               </div>
               <div>
@@ -105,7 +105,7 @@ export default function Contact() {
           {/* Contact Form */}
           <motion.form
             onSubmit={handleSubmit}
-            className="space-y-4 bg-dark-card border border-neon-green/30 p-8 rounded-lg"
+            className="glass-lg space-y-4 p-8 rounded-lg"
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6 }}

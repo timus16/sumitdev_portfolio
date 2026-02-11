@@ -13,9 +13,9 @@ module.exports = {
         'dark-card': '#1A1F3A',
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'sans': ['Raleway', 'system-ui', 'sans-serif'],
         'mono': ['JetBrains Mono', 'monospace'],
-        'display': ['IBM Plex Sans', 'sans-serif'],
+        'display': ['Raleway', 'sans-serif'],
       },
       animation: {
         'float': 'float 3s ease-in-out infinite',

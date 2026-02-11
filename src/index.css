@@ -15,6 +15,7 @@ html {
 body {
   @apply bg-dark-bg text-white font-sans overflow-x-hidden;
   background: linear-gradient(135deg, #0A0E27 0%, #141829 100%);
+  font-family: 'Raleway', 'Rubik', system-ui, sans-serif;
   font-feature-settings: 'ss01' 1;
 }
 
@@ -29,6 +30,42 @@ body {
 ::-webkit-scrollbar-thumb {
   @apply bg-neon-orange rounded-full;
   background: linear-gradient(180deg, #FF6B35, #00FF00);
+}
+
+/* Glass Morphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-sm {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-lg {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-orange {
+  background: rgba(255, 107, 53, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.glass-green {
+  background: rgba(0, 255, 0, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 0, 0.2);
 }
 
 .neon-text-orange {

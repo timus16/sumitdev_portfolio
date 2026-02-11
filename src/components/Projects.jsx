@@ -92,10 +92,10 @@ export default function Projects() {
             <motion.div
               key={idx}
               variants={itemVariants}
-              className={`bg-dark-card border-2 p-6 rounded-lg transition-all group cursor-pointer ${
+              className={`glass-lg border-2 p-6 rounded-lg transition-all group cursor-pointer ${
                 project.color === 'orange'
-                  ? 'border-neon-orange/50 hover:border-neon-orange'
-                  : 'border-neon-green/50 hover:border-neon-green'
+                  ? 'hover:border-neon-orange/80'
+                  : 'hover:border-neon-green/80'
               }`}
               whileHover={{ y: -10, scale: 1.02 }}
             >

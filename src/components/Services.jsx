@@ -76,10 +76,10 @@ export default function Services() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className={`bg-dark-card border-2 p-8 rounded-lg transition-all group hover:shadow-2xl ${
+                className={`glass-lg border-2 p-8 rounded-lg transition-all group hover:shadow-2xl ${
                   service.color === 'orange'
-                    ? 'border-neon-orange/50 hover:border-neon-orange'
-                    : 'border-neon-green/50 hover:border-neon-green'
+                    ? 'hover:border-neon-orange/80'
+                    : 'hover:border-neon-green/80'
                 }`}
                 whileHover={{ y: -15 }}
               >

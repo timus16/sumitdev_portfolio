@@ -55,15 +55,15 @@ export default function About() {
             animate={inView ? "visible" : "hidden"}
             transition={{ delay: 0.2 }}
           >
-            <div className="bg-dark-card border border-neon-orange/30 p-6 rounded-lg hover:border-neon-orange/80 transition-all">
+            <div className="glass-orange p-6 rounded-lg hover:border-neon-orange/80 transition-all">
               <h3 className="text-xl font-bold neon-text-orange mb-3">Experience</h3>
               <p className="text-gray-300">5+ years in web development with proven track record of delivering 100+ projects</p>
             </div>
-            <div className="bg-dark-card border border-neon-green/30 p-6 rounded-lg hover:border-neon-green/80 transition-all">
+            <div className="glass-green p-6 rounded-lg hover:border-neon-green/80 transition-all">
               <h3 className="text-xl font-bold neon-text-green mb-3">No-Code Expertise</h3>
               <p className="text-gray-300">Advanced knowledge of Bubble.io, FlutterFlow, Framer, and Webflow</p>
             </div>
-            <div className="bg-dark-card border border-neon-orange/30 p-6 rounded-lg hover:border-neon-orange/80 transition-all">
+            <div className="glass-orange p-6 rounded-lg hover:border-neon-orange/80 transition-all">
               <h3 className="text-xl font-bold neon-text-orange mb-3">Full-Stack Capability</h3>
               <p className="text-gray-300">Frontend, backend, and mobile development across multiple tech stacks</p>
             </div>
