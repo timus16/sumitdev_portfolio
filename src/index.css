@@ -1,0 +1,54 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark-bg text-white font-poppins overflow-x-hidden;
+  background: linear-gradient(135deg, #0A0E27 0%, #141829 100%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0E27;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neon-orange rounded-full;
+  background: linear-gradient(180deg, #FF6B35, #00FF00);
+}
+
+.neon-text-orange {
+  @apply text-neon-orange;
+  text-shadow: 0 0 10px #FF6B35, 0 0 20px #FF6B351a;
+}
+
+.neon-text-green {
+  @apply text-neon-green;
+  text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF001a;
+}
+
+.neon-border {
+  border-color: #FF6B35;
+  box-shadow: 0 0 20px #FF6B351a, inset 0 0 20px #FF6B351a;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #FF6B35 0%, #00FF00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
